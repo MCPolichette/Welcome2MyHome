@@ -2,23 +2,21 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "database_development",
-    "host": "127.0.0.1",
+    "database": "exampledb",
+    "host": "localhost",
     "port": 3307,
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "root",
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "database": "testdb",
+    "host": "localhost",
+    "dialect": "mysql",
+    "logging": false
   },
   "production": {
-    "username": "root",
-    "password": "root",
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
