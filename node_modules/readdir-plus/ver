@@ -1,0 +1,178 @@
+#!/usr/bin/env node
+
+var libFs = require("fs"),
+	exec = require("child_process").exec;
+
+var options = parseOptions();
+
+libFs.readFile(options.packagePath, "utf-8", function (err, packageJson) {
+	if (err) {
+		return onFatalError("Couldn't load file " + options.packagePath, err);
+	}
+
+	var pack;
+	try {
+		pack = JSON.parse(packageJson);
+	}
+	catch (err) {
+		return onFatalError("Invalid file format", err);
+	}
+
+	var version = (pack.version || options.defaultVersion || "").toLowerCase().trim(),
+		setVersion = (options.value || "").toLowerCase().trim();
+
+	if (!setVersion) {
+		console.log(version);
+		return process.exit(0);
+	}
+
+	try {
+		pack.version = versionAdd(version, setVersion);
+	}
+	catch (err) {
+		return onFatalError("Failed to update the version using '" + setVersion + "'", err);
+	}
+
+	var changeReport = version + " -> " + pack.version;
+
+	if (options.noCommit) {
+		writePackage(pack, function () {
+			console.log(changeReport + " (NOT COMMITTED)");
+			return process.exit(0);
+		});
+	}
+
+	writePackage(pack, function () {
+		command("git reset && git add " + options.packagePath + " && git commit -m '" + changeReport + "'", function () {
+			console.log(changeReport);
+			return process.exit(0);
+		});
+	});
+});
+
+function showHelp(code) {
+	var help = "Manage package.json version and automatically commit to git\n\n"
+		+ "Usage: ver [-v/--verbose][--no-commit][VALUE]\n"
+		+ "    -h, --help         : This message\n"
+		+ "    -v, --verbose      : Verbose output of all commands called (git)\n"
+		+ "    --no-commit        : Change version but don't commit to git\n\n"
+		+ "    VALUE should be formatted as 'x.x.x', where each 'x' is a digit and...\n"
+		+ "        - you can leave off one or two digits from the left\n"
+		+ "        - you can use '+' sign to increase digit by one\n"
+		+ "        - you can use '-' sign to decrease digit by one\n"
+		+ "    If no VALUE is provided, current one is displayed without changes\n"
+		+ "    Example values: '0.2.6', '+.0', '+'\n";
+	console.log(help);
+	if (code !== undefined) {
+		process.exit(code);
+	}
+}
+
+function parseOptions() {
+	var options = {
+		packagePath: __dirname + "/package.json",
+		defaultVersion: "0.0.0",
+		verbose: false,
+		noCommit: false,
+		value: null
+	};
+	process.argv.slice(2).forEach(function (arg) {
+		if (arg === "--help" || arg === "-h") {
+			return showHelp(0);
+		}
+		if (arg === "--verbose" || arg === "-v") {
+			options.verbose = true;
+		}
+		else if (arg === "--no-commit") {
+			options.noCommit = true;
+		}
+		else if (options.value === null) {
+			options.value = arg;
+		}
+		else {
+			return showHelp(1);
+		}
+	});
+	return options;
+}
+
+function onFatalError(message, err) {
+	console.error(message);
+	if (err) {
+		console.error(err);
+	}
+	return process.exit(1);
+}
+
+function verToArr(version, fillInVal) {
+	fillInVal = fillInVal || null;
+	var res = version.split(".")
+		.map(function (str) {
+			var num = parseInt(str, 10);
+			return isNaN(num) ? (str || null) : num;
+		});
+	while (res.length < 3) {
+		res.unshift(fillInVal);
+	}
+	return res.slice(0, 3);
+}
+
+function versionAdd(baseVer, addVer) {
+	var baseArr = verToArr(baseVer),
+		addArr = verToArr(addVer),
+		res = [];
+	for (var i = 2; i >= 0; i--) {
+		//noinspection FallthroughInSwitchStatementJS
+		switch (addArr[i]) {
+			case "":
+			case null:
+			case undefined:
+			case "=":
+				res[i] = baseArr[i];
+				break;
+			case "+":
+				res[i] = baseArr[i] + 1;
+				break;
+			case "-":
+				res[i] = Math.max(baseArr[i] - 1, 0);
+				break;
+			default:
+				if (!isNumber(addArr[i])) {
+					throw new Error("Invalid version value/command: " + addArr[i]);
+				}
+				res[i] = addArr[i];
+		}
+	}
+	return res.join(".");
+}
+
+function writePackage(pack, callback) {
+	var packageJson = JSON.stringify(pack, null, "\t");
+	return libFs.writeFile(options.packagePath, packageJson, function (err) {
+		if (err) {
+			return onFatalError("Failed to write new version (" + pack.version + ") to file file " + options.packagePath, err);
+		}
+		return callback();
+	});
+}
+
+function command(cmd, callback) {
+	return exec(cmd, function (err, stdout, stderr) {
+		if (options.verbose) {
+			if (stdout) {
+				console.log(stdout);
+			}
+			if (stderr) {
+				console.error(stderr);
+			}
+		}
+		if (err) {
+			return onFatalError("Command failed: '" + cmd + "'", err);
+		}
+		return callback();
+	});
+}
+
+function isNumber(x, nanIsNumber, infinityIsNumber) {
+	return typeof(x) === "number" && (nanIsNumber || !isNaN(x)) && (infinityIsNumber || isFinite(x));
+};

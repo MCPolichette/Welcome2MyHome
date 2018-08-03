@@ -1,0 +1,28 @@
+{
+  "name": "guest_app",
+  "version": "1.0.0",
+  "description": "host and guest correlation app",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.0",
+    "sequelize-models": "^1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MCPolichette/guest_app.git"
+  },
+  "author": "MP, WS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MCPolichette/guest_app/issues"
+  },
+  "homepage": "https://github.com/MCPolichette/guest_app#readme"
+}
