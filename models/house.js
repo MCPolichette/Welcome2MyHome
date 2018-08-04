@@ -8,7 +8,9 @@ module.exports = function(sequelize, DataTypes) {
     host_email: DataTypes.TEXT,
     wifi_network: DataTypes.TEXT,
     wifi_password: DataTypes.TEXT,
-    house_alarm_password: DataTypes.TEXT
+    house_alarm_pw: DataTypes.TEXT,
+    createdAt: DataTypes.TEXT,
+    updatedAt: DataTypes.TEXT
   });
   return House;
 };
