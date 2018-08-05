@@ -15,16 +15,17 @@ CREATE TABLE House
     wifi_network varchar(200) NOT NULL,
     wifi_password varchar(200)  NOT NULL,
     house_alarm_pw varchar(200) NOT NULL, 
+    house_info varchar(200) NOT NULL, 
 	createdAt TIMESTAMP NULL,
     updatedAt TIMESTAMP NULL,
     PRIMARY KEY (id)
 );
 
-INSERT INTO House (host_name, place_name, place_photo, host_address, host_phone, host_email, wifi_network, wifi_password, house_alarm_pw, createdAt, updatedAt) 
-VALUES ('Will Swensen', 'Shenandoa', '../public/images/test1.jpeg', '123 Sesame Street SLC, UT 84106', '8015554343', 'willy@yahoo.com', 'SWENSEN', 'TESTING', '1234', ' ', ' ');
+INSERT INTO House (host_name, place_name, place_photo, host_address, host_phone, host_email, wifi_network, wifi_password, house_alarm_pw, house_info, createdAt, updatedAt) 
+VALUES ('Will Swensen', 'Shenandoa', '../public/images/test1.jpeg', '123 Sesame Street SLC, UT 84106', '8015554343', 'willy@yahoo.com', 'SWENSEN', 'TESTING', '1234', 'garbage day on thursday, the plants have been watered', ' ', ' ');
 
-INSERT INTO House (host_name, place_name, place_photo, host_address, host_phone, host_email, wifi_network, wifi_password, house_alarm_pw, createdAt, updatedAt) 
-VALUES ('Clark Kent', 'Fortress of Solitude', '../public/images/test1.jpeg', '657 E. Maverick Ave SLC, UT 84106', '8015453432', 'clark_kent@yahoo.com', 'Kent Network', 'Cryptonite', '1111', ' ', ' ');
+INSERT INTO House (host_name, place_name, place_photo, host_address, host_phone, host_email, wifi_network, wifi_password, house_alarm_pw, house_info, createdAt, updatedAt) 
+VALUES ('Clark Kent', 'Fortress of Solitude', '../public/images/test1.jpeg', '657 E. Maverick Ave SLC, UT 84106', '8015453432', 'clark_kent@yahoo.com', 'Kent Network', 'Cryptonite', '1111', 'lex luther may be my father but we are on bad terms', ' ', ' ');
 
 CREATE TABLE Emergency_Contact
 (

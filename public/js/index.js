@@ -65,8 +65,16 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var house = {
-    text: $houseText.val().trim(),
-    description: $houseDescription.val().trim()
+    place_name: $houseText.val().trim(),
+    house_info: $houseDescription.val().trim(),
+    host_name: $house-owner.val().trim(),
+    place_photo: $house-photo.val().trim(),
+    host_address: $house-address.val().trim(),
+    host_phone: $house-phone.val().trim(),
+    host_email: $house-email.val().trim(),
+    wifi_network: $house-wifi-network.val().trim(),
+    wifi_password: $house-wifi-password.val().trim(),
+    house_alarm_pw: $house-alarm-key.val().trim()
   };
 
   if (!(house.text && house.description)) {

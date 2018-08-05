@@ -4,6 +4,7 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.House.findAll({}).then(function(dbHouses) {
+      console.log(dbHouses);
       res.render("index", {
         msg: "Welcome!",
         houses: dbHouses
