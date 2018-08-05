@@ -6,20 +6,53 @@
         <h2>This is our Home Page!</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            <label for="house-text">House Name</label>
+            <input type="text" id="house-text" class="form-control" aria-describedby="house-text" placeholder="Enter House Name">
           </div>
           <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+            <label for="house-description">House Description</label>
+            <textarea class="form-control" id="house-description" aria-describedby="house-description" placeholder="Enter House Description"></textarea>
           </div>
+          <div class="form-group">
+            <label for="house-owner">Homeowner Name</label>
+            <textarea class="form-control" id="house-owner" aria-describedby="house-owner" placeholder="Enter Homeowner Name"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="house-place">House Photo</label>
+            <textarea class="form-control" id="house-photo" aria-describedby="house-photo" placeholder="PHOTO WOULD GO HERE"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="house-address">House Address</label>
+            <textarea class="form-control" id="house-address" aria-describedby="house-address" placeholder="Enter House Address"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="house-phone">Host Phone</label>
+            <textarea class="form-control" id="house-phone" aria-describedby="house-phone" placeholder="Enter Host Phone Number"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="house-email">Host Email</label>
+            <textarea class="form-control" id="house-email" aria-describedby="house-email" placeholder="Enter Host Email"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="house-wifi-network">House Wifi Network</label>
+            <textarea class="form-control" id="house-wifi-network" aria-describedby="house-wifi-network" placeholder="Enter House Wifi Network"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="house-wifi-password">House Wifi Password</label>
+            <textarea class="form-control" id="house-wifi-password" aria-describedby="house-wifi-password" placeholder="Enter House Wifi Password"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="house-alarm-key">House Alarm Key</label>
+            <textarea class="form-control" id="house-alarm-key" aria-describedby="house-alarm-key" placeholder="Enter House Alarm Key"></textarea>
+          </div>
+
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
+        <h3>Houses:</h3>
+        <ul id="house-list" class="list-group">
+          {{#each houses}}
           <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
+            <a href="house/{{this.id}}">{{this.place_name}}</a>
             <button class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}
