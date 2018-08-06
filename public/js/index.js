@@ -1,47 +1,47 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $houseText = $("#house-text");
+var $houseDescription = $("#house-description");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $houseList = $("#house-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveHouse: function(house) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/houses",
+      data: JSON.stringify(house)
     });
   },
-  getExamples: function() {
+  getHouses: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/houses",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteHouse: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/houses/" + id,
       type: "DELETE"
     });
   }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+var refreshHouses = function() {
+  API.getHouses().then(function(data) {
+    var $houses = data.map(function(house) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(house.text)
+        .attr("href", "/house/" + house.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": house.id
         })
         .append($a);
 
@@ -54,8 +54,8 @@ var refreshExamples = function() {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $houseList.empty();
+    $houseList.append($houses);
   });
 };
 
@@ -64,22 +64,30 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var house = {
+    place_name: $houseText.val().trim(),
+    house_info: $houseDescription.val().trim(),
+    host_name: $house-owner.val().trim(),
+    place_photo: $house-photo.val().trim(),
+    host_address: $house-address.val().trim(),
+    host_phone: $house-phone.val().trim(),
+    host_email: $house-email.val().trim(),
+    wifi_network: $house-wifi-network.val().trim(),
+    wifi_password: $house-wifi-password.val().trim(),
+    house_alarm_pw: $house-alarm-key.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!(house.text && house.description)) {
+    alert("You must enter house text and description!");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.saveHouse(house).then(function() {
+    refreshHouses();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $houseText.val("");
+  $houseDescription.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -89,11 +97,11 @@ var handleDeleteBtnClick = function() {
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  API.deleteHouse(idToDelete).then(function() {
+    refreshHouses();
   });
 };
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$houseList.on("click", ".delete", handleDeleteBtnClick);
