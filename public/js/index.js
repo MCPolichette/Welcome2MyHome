@@ -62,6 +62,7 @@ var refreshHouses = function() {
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
+  console.log(event);
   event.preventDefault();
 
   var house = {
@@ -103,5 +104,5 @@ var handleDeleteBtnClick = function() {
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
+$submitBtn.on("click", handleFormSubmit());
 $houseList.on("click", ".delete", handleDeleteBtnClick);

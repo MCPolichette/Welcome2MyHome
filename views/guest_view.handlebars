@@ -1,17 +1,81 @@
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
+            <div class="card">
+                <div class="card-content">
+                    <p>Welcome to {{house.host_name}}'s Home</p>
+                </div>
+                <div class="card-tabs">
+                    <ul class="tabs tabs-fixed-width">
+                        <li class="tab">
+                            <a href="#hostInfo">{{house.host_name}}</a>
+                        </li>
+                        <li class="tab">
+                            <a class="active" href="#houseInfo">About</a>
+                        </li>
+                        <li class="tab">
+                            <a href="#wifiInfo">Wifi</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-content grey lighten-4">
+                    <div id="hostInfo">{{house.host_name}}
+                        <div>
+                            <p>{{house.host_address}}</p>
+                            <p>{{house.host_email}}</p>
+                            <p>{{house.host_phone}}</p>
+                        </div>
+                    </div>
+                    <div id="houseInfo">
+
+                    </div>
+                    <div id="wifiInfo">
+                        <i class="material-icons">wifi</i>
+                        <p>
+                            <strong>wifi network</strong>: {{house.wifi_network}}
+                        </p>
+                        <p>
+                            <strong>Wifi Password</strong>: {{house.wifi_password}}
+                        </p>
+                    </div>
+                </div>
+            </div>
             <div class="card mt-4">
                 <div class="card-body">
-                    <h5 class="card-title">Example</h5>
+                    <h5 class="card-title">House</h5>
+
                     <p>
-                        <strong>ID</strong>: {{example.id}}</p>
+                        <strong>ID</strong>: {{house.id}}</p>
                     <p>
                         <p>
-                            <strong>Text</strong>: {{example.text}}</p>
+                            <strong>owner</strong>: {{house.host_name}}</p>
                         <p>
-                            <strong>Description:</strong> {{example.description}}</p>
-                        <a href="/">← Back To Home</a>
+                            <p>
+                                <strong>place</strong>: {{house.place_name}}</p>
+                            <p>
+                                {{!--
+                                <img src="{{house.place_photo}}" alt="somehouse" style="width:300px; height:300px;"> --}}
+                                <p>
+                                    <strong>address</strong>: {{house.host_address}}</p>
+                                <p>
+                                    <p>
+                                        <strong>phone</strong>: {{house.host_phone}}</p>
+                                    <p>
+                                        <p>
+                                            <strong>email</strong>: {{house.host_email}}</p>
+                                        <p>
+                                            <p>
+                                                <strong>wifi network</strong>: {{house.wifi_network}}</p>
+                                            <p>
+                                                <p>
+                                                    <strong>Wifi Password</strong>: {{house.wifi_password}}</p>
+                                                <p>
+                                                    <p>
+                                                        <strong>alarm key</strong>: {{house.house_alarm_pw}}</p>
+                                                    <p>
+
+                                                        <strong>Description:</strong> {{house.house_info}}</p>
+                                                    <a href="/">← Back To Home</a>
                 </div>
             </div>
         </div>

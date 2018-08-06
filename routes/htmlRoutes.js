@@ -4,7 +4,6 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.House.findAll({}).then(function(dbHouses) {
-      console.log(dbHouses);
       res.render("index", {
         msg: "Welcome!",
         houses: dbHouses
@@ -16,6 +15,24 @@ module.exports = function(app) {
   app.get("/house/:id", function(req, res) {
     db.House.findOne({ where: { id: req.params.id } }).then(function(dbHouse) {
       res.render("house", {
+        house: dbHouse
+      });
+    });
+  });
+
+  // Load a guest viewing page and pass in an example by id
+  app.get("/guest_view/:id", function(req, res) {
+    db.House.findOne({ where: { id: req.params.id } }).then(function(dbHouse) {
+      res.render("guest_view", {
+        house: dbHouse
+      });
+    });
+  });
+
+  // Load editable viewing page and pass in an example by id
+  app.get("/edit_view/:id", function(req, res) {
+    db.House.findOne({ where: { id: req.params.id } }).then(function(dbHouse) {
+      res.render("edit_view", {
         house: dbHouse
       });
     });
