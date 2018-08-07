@@ -15,8 +15,10 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "materialize-social": "^1.0.3",
     "mysql": "^2.16.0",
     "mysql2": "^1.5.3",
+    "npm": "^6.3.0",
     "sequelize": "^4.38.0"
   },
   "devDependencies": {
