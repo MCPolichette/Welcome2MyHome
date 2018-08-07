@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card border-primary work-box-card text-center bg-info " id="home card">
+                <img class="card-img-top" src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&h=350"
+                    alt="Card image cap">
+                <div class="card-header workbox-header">
+                    <ul class="nav nav-tabs card-header-tabs ">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#hostInfo">
+                                <i class="fas fa-user-circle"></i>{{house.host_name}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#houseInfo">
+                                <i class="fas fa-home"></i>about {{house.place_name}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#wifi">
+                                <i class="fas fa-wifi"></i>wifi</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div id="hostInfo" class="container tab-pane active">
+                        <br>
+                        <h5>{{house.host_name}}</h5>
+                        <p>{{house.host_address}}</p>
+                        <p>{{house.host_email}}</p>
+                        <p>{{house.host_phone}}</p>
+                    </div>
+                    <div id="houseInfo" class="container tab-pane fade" style="background-color: white">
+                        <br>
+                        <h5>{{house.place_name}}</h5>
+                        <p>{{house.house_info}}</p>
+                        <p>Share this link with your guest: blablablabla.com/{{house.id}}/{{house.place_name}}</p>
+
+                    </div>
+                    <div id="wifi" class="container tab-pane">
+
+                        <br>
+                        <p>wifi network: {{house.wifi_network}} </p>
+                        <hr>
+                        <p>wifi password: {{house.wifi_password}}</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

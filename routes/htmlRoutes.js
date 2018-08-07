@@ -21,6 +21,24 @@ module.exports = function(app) {
     });
   });
 
+  // APIs for Guest_view and Edit View Below:
+  // Load house page and pass in an example by id
+  app.get("/guest_view/:id/:place_name", function(req, res) {
+    db.House.findOne({ where: { id: req.params.id } }).then(function(dbHouse) {
+      res.render("guest_view", {
+        house: dbHouse
+      });
+    });
+  });
+
+  // Load editable viewing page and pass in an example by id
+  app.get("/edit_view/:id", function(req, res) {
+    db.House.findOne({ where: { id: req.params.id } }).then(function(dbHouse) {
+      res.render("edit_view", {
+        house: dbHouse
+      });
+    });
+  });
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
