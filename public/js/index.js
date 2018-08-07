@@ -65,29 +65,46 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var house = {
-    place_name: $houseText.val().trim(),
-    house_info: $houseDescription.val().trim(),
-    host_name: $house-owner.val().trim(),
-    place_photo: $house-photo.val().trim(),
-    host_address: $house-address.val().trim(),
-    host_phone: $house-phone.val().trim(),
-    host_email: $house-email.val().trim(),
-    wifi_network: $house-wifi-network.val().trim(),
-    wifi_password: $house-wifi-password.val().trim(),
-    house_alarm_pw: $house-alarm-key.val().trim()
+    place_name: $("#house-text")
+      .val()
+      .trim(),
+    house_info: $("#house-description")
+      .val()
+      .trim(),
+    host_name: $("#house-owner")
+      .val()
+      .trim(),
+    place_photo: $("#house-photo")
+      .val()
+      .trim(),
+    host_address: $("#house-address")
+      .val()
+      .trim(),
+    host_phone: $("#house-phone")
+      .val()
+      .trim(),
+    host_email: $("#house-email")
+      .val()
+      .trim(),
+    wifi_network: $("#house-wifi-network")
+      .val()
+      .trim(),
+    wifi_password: $("#house-wifi-password")
+      .val()
+      .trim(),
+    house_alarm_pw: $("#house-alarm-key")
+      .val()
+      .trim()
   };
-
-  if (!(house.text && house.description)) {
-    alert("You must enter house text and description!");
-    return;
-  }
+  console.log(house);
+  // if (!(house.place_name && house.house_info)) {
+  //   alert("You must enter house text and description!");
+  //   return;
+  // }
 
   API.saveHouse(house).then(function() {
     refreshHouses();
   });
-
-  $houseText.val("");
-  $houseDescription.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked

@@ -1,3 +1,17 @@
-.list-group-item {
-  line-height: 2.5;
+body {
+  background-color: lightseagreen;
+}
+
+/* card panels tabs set up for experimentation */
+.tab-pane {
+  background-color: white;
+  font-style: bold;
+}
+.nav-item {
+  background: gray;
+  color: black;
+  font-size: 150%;
+}
+.nav-link {
+  color: black;
 }
