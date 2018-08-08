@@ -15,3 +15,13 @@ body {
 .nav-link {
   color: black;
 }
+/* Bottom right text */
+.img-bottom-right {
+  top: 5%;
+  right: 5%;
+  opacity: 0.7;
+  background-color: navy;
+  max-height: 20%;
+  max-width: 85%;
+  color: whitesmoke;
+}

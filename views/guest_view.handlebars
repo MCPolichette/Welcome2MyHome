@@ -1,9 +1,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="card border-primary work-box-card text-center bg-info " id="home card">
+            <div class="card border-primary work-box-card text-center bg-info " id="home_card">
+                <br>
+
                 <img class="card-img-top" src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&h=350"
                     alt="Card image cap">
+                <div class="card-img-overlay img-bottom-right">
+                    <img src="/public/images/goat.jpg" alt="key">
+                    <h1 class="card-title ">{{house.place_name}}</h1>
+                    <p class="card-text">Last Updated:{{house.updatedAt}}</p>
+                </div>
                 <div class="card-header workbox-header">
                     <ul class="nav nav-tabs card-header-tabs ">
                         <li class="nav-item">
@@ -35,7 +42,6 @@
                         <br>
                         <h5>{{house.place_name}}</h5>
                         <p>{{house.house_info}}</p>
-                        <p>Share this link with your guest: blablablabla.com/{{house.id}}/{{house.place_name}}</p>
 
                     </div>
                     <div id="wifi" class="container tab-pane">
