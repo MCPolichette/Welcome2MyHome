@@ -1,7 +1,20 @@
 body {
   background-color: lightseagreen;
 }
-
+/* card specific classes */
+.work-box-card{
+  margin-top: 5px;
+  border-width: 2.5px;
+  border-color: navy;
+}
+.card-header{
+  background-color:navy
+}
+.bottom-left{
+  position: absolute;
+  left: 4px;
+  bottom: 5px;
+}
 /* card panels tabs set up for experimentation */
 .tab-pane {
   background-color: white;
@@ -15,7 +28,7 @@ body {
 .nav-link {
   color: black;
 }
-/* Bottom right text */
+
 .img-bottom-right {
   top: 5%;
   right: 5%;
@@ -25,14 +38,16 @@ body {
   max-width: 85%;
   color: whitesmoke;
 }
-.keyLogo{
-  background-image: url("/public/images/BLK.jpg")
-}
+
 .topnav {
   overflow: hidden;
   background-color: #333;
 }
 /* navbar and footer settings */
+#frontPageLogo{
+  height: 55px;
+  float:right;
+}
 .topnav a {
   float: left;
   color: #f2f2f2;
@@ -48,17 +63,21 @@ body {
 }
 
 .topnav a.active {
-  background-color: #3a87b4;
+  background-color: navy;
   color: black;
 }
 .footer {
-  text-align: center;
+  
   margin-top: 15px;
   left: 0;
   bottom: 0;
-  width: 100%;
-  height: 80px;
   background-color: #3a87b4;
   color: white;
-  -webkit-text-fill-color: #ddd;
+  padding-bottom: 10px;
+}
+.whiteLink{
+  color:white
+}
+.center{
+  text-align: center;
 }

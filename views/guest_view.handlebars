@@ -9,7 +9,7 @@
                 <div class="card-img-overlay img-bottom-right">
                     
                     <h1 class="card-title ">{{house.place_name}}</h1>
-                    <p class="card-text">Last Updated:{{house.updatedAt}}</p>
+                    <p class="card-text bottom-left">Last Updated:  {{house.updatedAt}}</p>
                 </div>
                 <div class="card-header workbox-header">
                     <ul class="nav nav-tabs card-header-tabs ">
@@ -19,11 +19,19 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#houseInfo">
-                                <i class="fas fa-home"></i>about {{house.place_name}}</a>
+                                <i class="fas fa-home"></i>{{house.place_name}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#wifi">
-                                <i class="fas fa-wifi"></i>wifi</a>
+                            <a class="nav-link" data-toggle="tab" href="#emergencyContacts">
+                                <i class="fas fa-user-friends"></i>Emergency Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#petCare">
+                                <i class="fas fa-paw"></i>Pet Care</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#childCare">
+                                <i class="fas fa-child"></i>child care</a>
                         </li>
 
                     </ul>
@@ -32,25 +40,29 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div id="hostInfo" class="container tab-pane active">
-                        <div class= "keyLogo"></div>
                         <br>
                         <h5>{{house.host_name}}</h5>
                         <p>{{house.host_address}}</p>
                         <p>{{house.host_email}}</p>
                         <p>{{house.host_phone}}</p>
                     </div>
-                    <div id="houseInfo" class="container tab-pane fade" style="background-color: white">
+                    <div id="houseInfo" class="container tab-pane fade" >
                         <br>
                         <h5>{{house.place_name}}</h5>
+
                         <p>{{house.house_info}}</p>
-
-                    </div>
-                    <div id="wifi" class="container tab-pane">
-
                         <br>
                         <p>wifi network: {{house.wifi_network}} </p>
                         <hr>
                         <p>wifi password: {{house.wifi_password}}</p>
+                    </div>
+                    <div id="emergencyContacts" class="container tab-pane">
+
+                    </div>
+                    <div id="petCare" class="container tab-pane">
+
+                    </div>
+                    <div id="childCare" class="container tab-pane">
 
                     </div>
 

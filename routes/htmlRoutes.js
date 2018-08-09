@@ -23,7 +23,10 @@ module.exports = function(app) {
 
   // APIs for Guest_view and Edit View Below:
   // Load house page and pass in an example by id
-  app.get("/guest_view/:id/:place_name", function(req, res) {
+  app.get("/guest_view/:id/", function(req, res) {
+    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // I would prefer it to be /guest_view/:id/:placename, but for development, this linkage is easier to navigate
+    // please change the linkage on the guest_view.handlebars and elsewhere before publishing (Mark)
     db.House.findOne({ where: { id: req.params.id } }).then(function(dbHouse) {
       res.render("guest_view", {
         house: dbHouse
