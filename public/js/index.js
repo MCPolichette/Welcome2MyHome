@@ -1,6 +1,6 @@
 // Get references to page elements
-var $houseText = $("#house-text");
-var $houseDescription = $("#house-description");
+// var $houseText = $("#house-text");
+// var $houseDescription = $("#house-description");
 var $submitBtn = $("#submit");
 var $houseList = $("#house-list");
 
@@ -39,7 +39,7 @@ var refreshHouses = function() {
     console.log("refreshHouses" + data);
     var $houses = data.map(function(house) {
       var $a = $("<a>")
-        .text(house.text)
+        .text(house.place_name)
         .attr("href", "/house/" + house.id);
 
       var $li = $("<li>")
@@ -57,7 +57,16 @@ var refreshHouses = function() {
 
       return $li;
     });
-
+    $("#house-text").val("");
+    $("#house-description").val("");
+    $("#house-owner").val("");
+    // $("place-photo").val("");
+    $("host-address").val("");
+    $("host-phone").val("");
+    $("host-email").val("");
+    $("host-network").val("");
+    $("wifi-password").val("");
+    $("house-alarm-key").val("");
     $houseList.empty();
     $houseList.append($houses);
   });
@@ -72,24 +81,16 @@ var handleFormSubmit = function(event) {
     place_name: $("#house-text").val().trim(),
     house_info: $("#house-description").val().trim(),
     host_name: $("#house-owner").val().trim(),
-    place_photo: $("#house-photo").val().trim(),
-    host_address: $("#house-address").val().trim(),
-    host_phone: $("#house-phone").val().trim(),
     host_email: $("#house-email").val().trim(),
-    wifi_network: $("#house-wifi-network").val().trim(),
     wifi_password: $("#house-wifi-password").val().trim(),
     house_alarm_pw: $("#house-alarm-key").val().trim()
   };
-
-  console.log("object build " + house);
-  var houseString = JSON.stringify(house);
+  // console.log(house);
   // if (!(house.place_name && house.house_info)) {
   //   alert("You must enter house text and description!");
   //   return;
   // }
-
-  API.saveHouse(houseString).then(function() {
-    console.log("first house  " + houseString);
+  API.saveHouse(house).then(function() {
     refreshHouses();
   });
 };
