@@ -10,8 +10,8 @@ module.exports = function(sequelize, DataTypes) {
     wifi_password: DataTypes.TEXT,
     house_alarm_pw: DataTypes.TEXT,
     house_info: DataTypes.TEXT,
-    createdAt: DataTypes.TEXT,
-    updatedAt: DataTypes.TEXT
+    // createdAt: DataTypes.TEXT,
+    // updatedAt: DataTypes.TEXT
   },
   {
     freezeTableName: true

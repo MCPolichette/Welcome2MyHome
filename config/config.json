@@ -5,7 +5,8 @@
     "database": "host_db",
     "host": "localhost",
     "port": 3307,
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "cloud_name": "welcome2myhome"
   },
   "test": {
     "username": "root",
@@ -17,6 +18,9 @@
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "api_key": "567676317858836",
+    "api_secret": "qHLecWYoFCyn0lz0-nLZLEfmO8g",
+    "cloud_name": "welcome2myhome"
   }
 }

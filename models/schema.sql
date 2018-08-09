@@ -33,7 +33,7 @@ CREATE TABLE Emergency_Contact
 	house_id INT(200) Null,
     contact_name varchar(255) NOT NULL,
 	contact_email varchar(255) NOT NULL,
-    contact_phone INTEGER(11) NOT NULL,
+    contact_phone INTEGER(13) NOT NULL,
     contact_description varchar(144) NOT NULL,
     createdAt: TIMESTAMP NULL,
     updatedAT: TIMESTAMP NULL,
@@ -42,3 +42,18 @@ CREATE TABLE Emergency_Contact
 
 INSERT INTO Emergency_Contact (house_id, contact_name, contact_email, contact_phone, contact_description, createdAt, updatedAT) 
 VALUES ('1', 'Henry Ellis', 'henry@hotmail.com', '2086753432', 'This is my good friend and neighbor he can help with just about anything', ' ', ' ');
+
+-- CREATE TABLE albums :force => true do |t| 
+--     t.string   "title"
+--     t.datetime "created_at", :null => false
+--     t.datetime "updated_at", :null => false
+--   end
+
+--   create_table "photos", :force => true do |t|
+--     t.string   "title"
+--     t.string   "image"
+--     t.integer  "bytes"
+--     t.datetime "created_at", :null => false
+--     t.datetime "updated_at", :null => false
+--     t.integer  "album_id"
+--   end
