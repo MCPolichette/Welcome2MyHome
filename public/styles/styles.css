@@ -25,3 +25,40 @@ body {
   max-width: 85%;
   color: whitesmoke;
 }
+.keyLogo{
+  background-image: url("/public/images/BLK.jpg")
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+/* navbar and footer settings */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #3a87b4;
+  color: black;
+}
+.footer {
+  text-align: center;
+  margin-top: 15px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #3a87b4;
+  color: white;
+  -webkit-text-fill-color: #ddd;
+}
