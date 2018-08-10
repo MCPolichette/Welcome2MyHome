@@ -1,8 +1,10 @@
 var db = require("../models");
 
 module.exports = function(app) {
+
+  app.get
   // Load index page
-  app.get("/", function(req, res) {
+  app.get("/index", function(req, res) {
     db.House.findAll({}).then(function(dbHouses) {
       console.log(dbHouses);
       res.render("index", {
@@ -42,7 +44,7 @@ module.exports = function(app) {
       });
     });
   });
-  app.get("/about", function(req, res) {
+  app.get("/", function(req, res) {
     res.render("about");
   });
 

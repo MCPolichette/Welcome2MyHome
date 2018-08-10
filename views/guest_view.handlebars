@@ -22,17 +22,17 @@
                                 <i class="fas fa-home"></i>{{house.place_name}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#emergencyContacts">
-                                <i class="fas fa-user-friends"></i>Emergency Contacts</a>
+                            <a class="nav-link" data-toggle="tab" href="#sharePage">
+                                <img src="/images/emptyKey.png" style="height:1.5em" >Share This Page</a>
                         </li>
-                        <li class="nav-item">
+                        {{!-- <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#petCare">
                                 <i class="fas fa-paw"></i>Pet Care</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#childCare">
                                 <i class="fas fa-child"></i>child care</a>
-                        </li>
+                        </li> --}}
 
                     </ul>
                 </div>
@@ -48,6 +48,7 @@
                     </div>
                     <div id="houseInfo" class="container tab-pane fade" >
                         <br>
+                        
                         <h5>{{house.place_name}}</h5>
 
                         <p>{{house.house_info}}</p>
@@ -56,7 +57,8 @@
                         <hr>
                         <p>wifi password: {{house.wifi_password}}</p>
                     </div>
-                    <div id="emergencyContacts" class="container tab-pane">
+                    <div id="sharePage" class="container tab-pane">
+                        <h4>Share {{house.place_name}}</h4>
 
                     </div>
                     <div id="petCare" class="container tab-pane">
