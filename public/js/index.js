@@ -36,6 +36,7 @@ var tempUrl;
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveHouse: function(house) {
+   
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -43,6 +44,8 @@ var API = {
       type: "POST",
       url: "api/houses",
       data: JSON.stringify(house)
+      // var house is being stringified before leading into saveHouse function
+      // original data: JSON.stringify(house)
     });
   },
   getHouses: function() {
@@ -63,6 +66,7 @@ var API = {
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshHouses = function() {
   API.getHouses().then(function(data) {
+  
     var $houses = data.map(function(house) {
       var $a = $("<a>")
         .text(house.place_name)
@@ -113,9 +117,9 @@ var handleFormSubmit = function(event) {
     host_address: $("#house-address").val().trim(),
     host_phone: $("#house-phone").val().trim(),
     host_email: $("#house-email").val().trim(),
-    wifi_network: $("#house-wifi-network").val().trim(),
     wifi_password: $("#house-wifi-password").val().trim(),
     house_alarm_pw: $("#house-alarm-key").val().trim()
+    
   };
   // console.log(house);
   // if (!(house.place_name && house.house_info)) {

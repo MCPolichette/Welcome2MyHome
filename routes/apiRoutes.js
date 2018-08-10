@@ -10,6 +10,7 @@ module.exports = function(app) {
 
   // Create a new house
   app.post("/api/houses", function(req, res) {
+    console.log("API ROUTE" + req);
     db.House.create(req.body).then(function(dbHouse) {
       res.json(dbHouse);
     });
