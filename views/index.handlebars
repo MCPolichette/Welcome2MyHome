@@ -17,13 +17,16 @@
             <label for="house-owner">Homeowner Name</label>
             <textarea class="form-control" id="house-owner" aria-describedby="house-owner" placeholder="Enter Homeowner Name"></textarea>
           </div>
-          <div class="form-group">
-            <label for="house-place">House Photo</label>
-            <div class="form-group">
-            <input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="image_id" 
-            data-form-data=" ... upload options as html-escaped JSON data ... " ></input>
-            </div>
+          <div class= "form-group">
+          <label for="house-owner">PHOTO</label>
+          <div class="card">
+            <img src="http://fillmurray.com/g/300/300" id="img-preview" />
+            <label class="file-upload-container" for="file-upload">
+              <input id="file-upload" type="file" style="display:none;">
+              Select an Image
+            </label>
           </div>
+    </div>
           <div class="form-group">
             <label for="house-address">House Address</label>
             <textarea class="form-control" id="house-address" aria-describedby="house-address" placeholder="Enter House Address"></textarea>
