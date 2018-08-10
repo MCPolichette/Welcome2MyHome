@@ -1,5 +1,5 @@
 {
-  "name": "Guest Key",
+  "name": "guest-key",
   "version": "1.0.0",
   "description": "House Sitter Application",
   "main": "server.js",
