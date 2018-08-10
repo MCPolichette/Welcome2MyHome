@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang= "en">
 
 <head>
   {{!-- I want to delete this autosave nonsense --}}
@@ -21,17 +21,18 @@
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
   <link rel="icon" href="/images/favicon.ico">
   <script src="[folder-path]/jquery/dist/jquery.js" type="text/javascript"></script>
-    // the following files only need to be included in order to support client-side uploading
-    <script src="[folder-path]/blueimp-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script>
+    {{!-- // the following files only need to be included in order to support client-side uploading --}}
+    {{!-- <script src="[folder-path]/blueimp-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script>
     <script src="[folder-path]/blueimp-file-upload/js/jquery.iframe-transport.js" type="text/javascript"></script>
     <script src="[folder-path]/blueimp-file-upload/js/jquery.fileupload.js" type="text/javascript"></script>
-    <script src="[folder-path]/cloudinary-jquery-file-upload/cloudinary-jquery-file-upload.js" type="text/javascript"></script>
+    <script src="[folder-path]/cloudinary-jquery-file-upload/cloudinary-jquery-file-upload.js" type="text/javascript"></script> --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <title>Welcome 2 My Home</title>
 </head>
 
 <body>
   {{{body}}}
-
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="/js/index.js"></script>
 </body>
 

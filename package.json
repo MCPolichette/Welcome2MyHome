@@ -1,7 +1,7 @@
 {
-  "name": "node-handlebars-boilerplate",
+  "name": "Guest Key",
   "version": "1.0.0",
-  "description": "Project 2 Starter",
+  "description": "House Sitter Application",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
