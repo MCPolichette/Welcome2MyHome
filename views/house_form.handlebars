@@ -1,0 +1,143 @@
+{{!-- Create Contact Modal, This input shows up and adds emergency contacts to guest's field --}}
+<div class="modal fade" id="emergency-contact" tabindex="-1" role="dialog" aria-labelledby="emergency-contact" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="logo">Guest Key</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{!-- Connie's Emergency contact form here --}}
+
+
+            </div>
+            <div class="modal-footer">
+                <button id="new-contact" type="submit" class="btn btn-primary">Create Contact</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="row">
+        <h1>Tell Us About Your Home!</h1>
+        <h3>In the forms below, fill out any information you would like your guest to know.</h3>
+        <h3> Everybody's home is different, thats why we want to allow you to customize this page as much as possible. Only a
+            few categories are Required, If something doesn't apply to you, don't feel obligated to fill it out</h3>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="center">About The Host (you)</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="center">Contact Information</h3>
+            <div class="form-group">
+                <label for="house-owner">Homeowner Name (required)</label>
+                <input id="house-owner" type="text" class="form-control form-control-lg" placeholder="Your Name">
+                <div class="form-group">
+                    <label for="house-phone">Host Phone (required)</label>
+                    <input id="house-phone" type="tel" class="form-control form-control-lg" placeholder="555-555-5555">
+                </div>
+                <div class="form-group">
+                    <label for="house-email">Host Email (required)</label>
+                    <input id="house-email" type="email" class="form-control form-control-lg" placeholder="your@email.here">
+                </div>
+                {{!-- new field --}}
+                <div class="form-group">
+                    <label for="host-notes">Additional Notes:</label>
+                    <textarea class="form-control" id="host-notes" aria-describedby="host-notes" placeholder="Write any additional details you might want to "></textarea>
+                </div>
+                <a id="createNewContactBtn" class="nav-link" data-toggle="modal" data-target="#emergency-contact">Create an emergency contact</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            {{!-- all new fields --}} {{!-- We may need to change the placeholders to match how bootstrap automates the inputs --}}
+            <h4 class="center">Are you going out of town?</h4>
+            <h5 class="center">Here you can fill out information about your trip to inform your guest about arrival and departure, and contact
+                information for where you are staying.</h5>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="departing-date">Departure Date</label>
+                    <input id="departure-date" type="date" class="form-control" placeholder="8/8/18">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="return-date">Returning Date</label>
+                    <input id="return-date" type="date" class="form-control" placeholder="8/8/18">
+                </div>
+            </div>
+            <h5>Additional Contact Information about your trip.</h5>
+            <h5>In the example below, we used "Hotel" as the example, These fields are meant to be extra contact info</h5>
+            <div class="form-group">
+                <label for="trip-destination">Hotel / Resort:</label>
+                <input id="trip-destination" type="text" class="form-control" placeholder="Hotel Name">
+            </div>
+            <div class="form-group">
+                <label for="trip-phone">Phone</label>
+                <input id="trip-phone" type="tel" class="form-control" placeholder="555-555-5555">
+            </div>
+            <div class="form-group">
+                <label for="trip-address">Address</label>
+                <input id="trip-address" type="text" class="form-control" placeholder="123 Main St">
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="trip-state">State</label>
+                    <input id="trip-state" type="text" class="form-control" placeholder="State">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="trip-country">Country</label>
+                    <input id="trip-country" type="text" class="form-control" placeholder="Nation">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="trip-notes">Additional notes for your guest</label>
+                <input id="trip-notes" type="text" class="form-control" placeholder="Write notes here about your stay that may be beneficial to your guest">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="house-photo">Add a photo to represent your home</label>
+                <div class="card">
+                    <img src="http://fillmurray.com/g/300/300" id="img-preview" />
+                    <label class="file-upload-container" for="file-upload">
+                        <input id="file-upload" type="file" style="display:none;"> Select an Image
+                    </label>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <h4>Details about your home</h4>
+            <div class="form-group">
+                <label for="house-address">House Address</label>
+                <textarea class="form-control" id="house-address" aria-describedby="house-address" placeholder="Enter House Address"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="house-wifi-network">House Wifi Network</label>
+                <textarea class="form-control" id="house-wifi-network" aria-describedby="house-wifi-network" placeholder="Enter House Wifi Network"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="house-wifi-password">House Wifi Password</label>
+                <textarea class="form-control" id="house-wifi-password" aria-describedby="house-wifi-password" placeholder="Enter House Wifi Password"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="house-alarm-key">House Alarm Key</label>
+                <textarea class="form-control" id="house-alarm-key" aria-describedby="house-alarm-key" placeholder="Enter House Alarm Key"></textarea>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+
+</div>
