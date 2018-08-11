@@ -14,6 +14,7 @@ var contactArray = [];
         };
         console.log(emerContact);
         contactArray.push(emerContact);
+        
     };
     
 // on click form submit,
