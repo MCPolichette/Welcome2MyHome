@@ -2,49 +2,49 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card border-primary work-box-card text-center bg-info " id="home card">
-                <img class="card-img-top" src="{{house.place_photo}}" "
-                    alt="Card image cap ">
-                <div class="card-img-overlay img-bottom-right ">
+                <img class="card-img-top" src= "{{house.place_photo}}""
+                    alt="Card image cap">
+                <div class="card-img-overlay img-bottom-right">
                     
                     <h1 class="card-title ">{{house.place_name}}</h1>
-                    <p class="card-text bottom-left ">Last Updated:  {{house.updatedAt}}</p>
+                    <p class="card-text bottom-left">Last Updated:  {{house.updatedAt}}</p>
                 </div>
-                <div class="card-header workbox-header ">
+                <div class="card-header workbox-header">
                     <ul class="nav nav-tabs card-header-tabs ">
-                        <li class="nav-item ">
-                            <a class="nav-link active " data-toggle="tab " href="#hostInfo ">
-                                <i class="fas fa-user-circle "></i>{{house.host_name}}</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#hostInfo">
+                                <i class="fas fa-user-circle"></i>{{house.host_name}}</a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link " data-toggle="tab " href="#houseInfo ">
-                                <i class="fas fa-home "></i>{{house.place_name}}</a>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#houseInfo">
+                                <i class="fas fa-home"></i>{{house.place_name}}</a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link " data-toggle="tab " href="#sharePage ">
-                                <img src="/images/emptyKey.png " style="height:1.5em " >Share This Page</a>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#sharePage">
+                                <img src="/images/emptyKey.png" style="height:1.5em" >Share This Page</a>
                         </li>
-                        {{!-- <li class="nav-item ">
-                            <a class="nav-link " data-toggle="tab " href="#petCare ">
-                                <i class="fas fa-paw "></i>Pet Care</a>
+                        {{!-- <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#petCare">
+                                <i class="fas fa-paw"></i>Pet Care</a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link " data-toggle="tab " href="#childCare ">
-                                <i class="fas fa-child "></i>child care</a>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#childCare">
+                                <i class="fas fa-child"></i>child care</a>
                         </li> --}}
 
                     </ul>
                 </div>
 
                 <!-- Tab panes -->
-                <div class="tab-content ">
-                    <div id="hostInfo " class="container tab-pane active ">
+                <div class="tab-content">
+                    <div id="hostInfo" class="container tab-pane active">
                         <br>
                         <h5>{{house.host_name}}</h5>
                         <p>{{house.host_address}}</p>
                         <p>{{house.host_email}}</p>
                         <p>{{house.host_phone}}</p>
                     </div>
-                    <div id="houseInfo " class="container tab-pane fade " >
+                    <div id="houseInfo" class="container tab-pane fade" >
                         <br>
                         
                         <h5>{{house.place_name}}</h5>
@@ -55,16 +55,17 @@
                         <hr>
                         <p>wifi password: {{house.wifi_password}}</p>
                     </div>
-                    <div id="sharePage " class="container tab-pane ">
+                    <div id="sharePage" class="container tab-pane">
                         <h4>Share {{house.place_name}}</h4>
-
-{{!-- put in a div, that holds the empty KEY image, and overlays a 200x200 square in the appropriate spot --}}
+                        <div id="keyOverlay">
+                            <img src="/images/emptyKey.png" alt="Cinque Terre" width="100%">
+                            <div class="overlay">QR CODE GOES HERE</div>
+                        </div>
+                    </div>
+                    <div id="petCare" class="container tab-pane">
 
                     </div>
-                    <div id="petCare " class="container tab-pane ">
-
-                    </div>
-                    <div id="childCare " class="container tab-pane ">
+                    <div id="childCare" class="container tab-pane">
 
                     </div>
 

@@ -3,8 +3,7 @@
 // var $houseDescription = $("#house-description");
 var $submitBtn = $("#submit");
 var $houseList = $("#house-list");
-var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/welcome2myhome/upload/";
-var KEY_URL = "https://api.cloudinary.com/v1_1/welcome2myhome/upload"; 
+var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/welcome2myhome/upload"; 
 var CLOUDINARY_UPLOAD_PRESET = "j8seyt9p";
 var imagePreview = document.getElementById("img-preview");
 var fileUpload = document.getElementById("file-upload");
@@ -12,29 +11,29 @@ var tempUrl;
 // $.cloudinary.config({ cloud_name: 'welcome2myhome', secure: true});
 
 
-// function photoUpload() {
-  fileUpload.addEventListener("change", function(event){
-    var file = event.target.files[0];
-    var formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+var imageUpload = 
+fileUpload.addEventListener("change", function(event){
+  var file = event.target.files[0];
+  var formData = new FormData();
+  formData.append("file", file);
+  formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
 
-    axios({
-      url: CLOUDINARY_URL,
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      data: formData
-    }).then(function(res) {
-      console.log(res);
-      imagePreview.src = res.data.secure_url;
-      tempUrl = res.data.secure_url;
-    }).catch(function(err){
-      console.log(err);
-    });
+  axios({
+    url: CLOUDINARY_URL,
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    data: formData
+  }).then(function(res) {
+    console.log(res);
+    imagePreview.src = res.data.secure_url;
+    tempUrl = res.data.secure_url;
+  }).catch(function(err){
+    console.log(err);
   });
-// }
+});
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {

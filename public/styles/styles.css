@@ -15,9 +15,7 @@ body {
   left: 4px;
   bottom: 5px;
 }
-.card-img-top{
-  max-height: 400px;
-}
+
 /* card panels tabs set up for experimentation */
 .tab-pane {
   background-color: white;
@@ -31,7 +29,6 @@ body {
 .nav-link {
   color: black;
 }
-
 
 .img-bottom-right {
   top: 5%;
@@ -113,4 +110,20 @@ body {
     cursor: pointer;
     background: #3949AB;
 
+}
+
+/* css for key overlay please keep at the bottom */
+
+#keyOverlay {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 12.5%;
+  left: 6.5%;
+  width: 30.5%;
+  height: 70.5%;
+  font-size: 18px;
+  background-color: yellow;
 }

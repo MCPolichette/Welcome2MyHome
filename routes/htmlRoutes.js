@@ -1,7 +1,8 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  app.get;
+
+  app.get
   // Load index page
   app.get("/index", function(req, res) {
     db.House.findAll({}).then(function(dbHouses) {
@@ -45,9 +46,6 @@ module.exports = function(app) {
   });
   app.get("/", function(req, res) {
     res.render("about");
-  });
-  app.get("/form", function(req, res) {
-    res.render("house_form");
   });
 
   // Render 404 page for any unmatched routes
