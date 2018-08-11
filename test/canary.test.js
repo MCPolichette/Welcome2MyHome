@@ -7,3 +7,4 @@ describe("canary test", function() {
     expect(true).to.be.true;
   });
 });
+// come back to make a test for image overlay
