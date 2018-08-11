@@ -1,3 +1,4 @@
+{{!-- Create Contact Modal, This input shows up and adds emergency contacts to guest's field --}}
 <div class="modal fade" id="emergency-contact" tabindex="-1" role="dialog" aria-labelledby="emergency-contact" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -41,11 +42,11 @@
                 <input id="house-owner" type="text" class="form-control form-control-lg" placeholder="Bob Smith">
                 <div class="form-group">
                     <label for="house-phone">Host Phone (required)</label>
-                    <input id="house-phone" type="tel" class="form-control" placeholder="555-555-5555">
+                    <input id="house-phone" type="tel" class="form-control form-control-lg" placeholder="555-555-5555">
                 </div>
                 <div class="form-group">
                     <label for="house-email">Host Email (required)</label>
-                    <input id="house-email" type="email" class="form-control" placeholder="bob@bobs_website.com">
+                    <input id="house-email" type="email" class="form-control form-control-lg" placeholder="bob@bobs_website.com">
                 </div>
                 {{!-- new field --}}
                 <div class="form-group">
@@ -59,13 +60,16 @@
             <h4 class="center">Are you going out of town?</h4>
             <h5 class="center">Here you can fill out information about your trip to inform your guest about arrival and departure, and contact
                 information for where you are staying.</h5>
-            <div class="form-group">
-                <label for="departing-date">Departure Date</label>
-                <input id="departure-date" type="date" class="form-control" placeholder="8/8/18">
-            </div>
-            <div class="form-group">
-                <label for="return-date">Returning Date</label>
-                <input id="return-date" type="date" class="form-control" placeholder="8/8/18">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="departing-date">Departure Date</label>
+                    <input id="departure-date" type="date" class="form-control" placeholder="8/8/18">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="return-date">Returning Date</label>
+                    <input id="return-date" type="date" class="form-control" placeholder="8/8/18">
+                </div>
             </div>
             <h5>Additional Contact Information about your trip.</h5>
             <h5>In the example below, we used "Hotel" as the example, These fields are meant to be extra contact info</h5>
@@ -81,22 +85,58 @@
                 <label for="trip-address">Address</label>
                 <input id="trip-address" type="text" class="form-control" placeholder="123 Main St">
             </div>
-            <div class="form-group">
-                <label for="trip-state">State</label>
-                <input id="trip-state" type="text" class="form-control" placeholder="State">
-            </div>
-            <div class="form-group">
-                <label for="trip-country">Country</label>
-                <input id="trip-country" type="text" class="form-control" placeholder="Nation">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="trip-state">State</label>
+                    <input id="trip-state" type="text" class="form-control" placeholder="State">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="trip-country">Country</label>
+                    <input id="trip-country" type="text" class="form-control" placeholder="Nation">
+                </div>
             </div>
             <div class="form-group">
                 <label for="trip-notes">Additional notes for your guest</label>
                 <input id="trip-notes" type="text" class="form-control" placeholder="Write notes here about your stay that may be beneficial to your guest">
             </div>
         </div>
-
-        <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="house-photo">Add a photo to represent your home</label>
+                <div class="card">
+                    <img src="http://fillmurray.com/g/300/300" id="img-preview" />
+                    <label class="file-upload-container" for="file-upload">
+                        <input id="file-upload" type="file" style="display:none;"> Select an Image
+                    </label>
+                </div>
+            </div>
 
         </div>
+        <div class="col-md-4">
+            <h4>Details about your home</h4>
+            <div class="form-group">
+                <label for="house-address">House Address</label>
+                <textarea class="form-control" id="house-address" aria-describedby="house-address" placeholder="Enter House Address"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="house-wifi-network">House Wifi Network</label>
+                <textarea class="form-control" id="house-wifi-network" aria-describedby="house-wifi-network" placeholder="Enter House Wifi Network"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="house-wifi-password">House Wifi Password</label>
+                <textarea class="form-control" id="house-wifi-password" aria-describedby="house-wifi-password" placeholder="Enter House Wifi Password"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="house-alarm-key">House Alarm Key</label>
+                <textarea class="form-control" id="house-alarm-key" aria-describedby="house-alarm-key" placeholder="Enter House Alarm Key"></textarea>
+            </div>
 
+        </div>
+        <div class="col-md-4">
+
+        </div>
     </div>
+
+</div>
