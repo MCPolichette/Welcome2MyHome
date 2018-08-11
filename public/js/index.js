@@ -1,6 +1,4 @@
-// Get references to page elements
-// var $houseText = $("#house-text");
-// var $houseDescription = $("#house-description");
+
 var $submitBtn = $("#submit");
 var $houseList = $("#house-list");
 var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/welcome2myhome/upload"; 
@@ -10,8 +8,6 @@ var fileUpload = document.getElementById("file-upload");
 var tempUrl;
 // $.cloudinary.config({ cloud_name: 'welcome2myhome', secure: true});
 
-
-var imageUpload = 
 fileUpload.addEventListener("change", function(event){
   var file = event.target.files[0];
   var formData = new FormData();
