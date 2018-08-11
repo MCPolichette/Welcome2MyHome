@@ -15,6 +15,9 @@ body {
   left: 4px;
   bottom: 5px;
 }
+.card-img-top{
+  max-height: 400px;
+}
 /* card panels tabs set up for experimentation */
 .tab-pane {
   background-color: white;
