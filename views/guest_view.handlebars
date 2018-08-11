@@ -2,12 +2,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card border-primary work-box-card text-center bg-info " id="home card">
-                <img class="card-img-top" src= "{{house.place_photo}}""
-                    alt="Card image cap">
+                <img class="card-img-top" src="{{house.place_photo}}" alt="Card image cap">
                 <div class="card-img-overlay img-bottom-right">
-                    
+
                     <h1 class="card-title ">{{house.place_name}}</h1>
-                    <p class="card-text bottom-left">Last Updated:  {{house.updatedAt}}</p>
+                    <p class="card-text bottom-left">Last Updated: {{house.updatedAt}}</p>
                 </div>
                 <div class="card-header workbox-header">
                     <ul class="nav nav-tabs card-header-tabs ">
@@ -21,9 +20,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#sharePage">
-                                <img src="/images/emptyKey.png" style="height:1.5em" >Share This Page</a>
+                                <img src="/images/emptyKey.png" style="height:1.5em">Share This Page</a>
                         </li>
-                        {{!-- <li class="nav-item">
+                        {{!--
+                        <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#petCare">
                                 <i class="fas fa-paw"></i>Pet Care</a>
                         </li>
@@ -44,9 +44,9 @@
                         <p>{{house.host_email}}</p>
                         <p>{{house.host_phone}}</p>
                     </div>
-                    <div id="houseInfo" class="container tab-pane fade" >
+                    <div id="houseInfo" class="container tab-pane fade">
                         <br>
-                        
+
                         <h5>{{house.place_name}}</h5>
 
                         <p>{{house.house_info}}</p>
