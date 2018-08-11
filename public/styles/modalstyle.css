@@ -1,0 +1,58 @@
+body {
+  padding: 0px;
+  margin: 5px;
+  background: url("../parallax-template/ronald-cuyan-534984-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div.fieldset {
+  width: 500px;
+  background-color: transparent;
+  opacity: 0.75;
+}
+
+fieldset {
+  border: none;
+  margin: 0 0 0 -10px;
+  padding: 0;
+}
+
+legend {
+  font-size: 20px;
+  text-align: left;
+  margin-left: 10px;
+}
+
+label.field {
+  /* text-align: right; */
+  /* width: 100px; */
+  /* float: left; */
+  font-weight: bold;
+}
+
+input.textbox-300 {
+  width: 300px;
+  float: left;
+}
+
+fieldset p {
+  clear: both;
+  padding: 5px;
+}
+
+label span,
+.required {
+  color: red;
+  font-weight: bold;
+}
+
+h2 {
+  -webkit-column-span: all;
+  column-span: all;
+  font-family: "Kaushan Script", cursive;
+  font-size: 36px;
+  text-shadow: black 2px 2px;
+  text-align: center;
+  color: rgb(219, 231, 235);
+}

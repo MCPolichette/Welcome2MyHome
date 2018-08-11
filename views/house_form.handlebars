@@ -10,7 +10,47 @@
             </div>
             <div class="modal-body">
                 {{!-- Connie's Emergency contact form here --}}
+                <h2>Emergency Contact</h2>
+                <p>
+                    <strong>Complete this section to list an emergency contact person to be reached when you are unavailable.</strong>
+                </p>
 
+                <form action="" method="GET">
+                    <p class="required">* Required</p>
+                    <div class="fieldset">
+                        <fieldset>
+                            <legend>
+                                <strong>Emergency Contact:</strong>
+                            </legend>
+
+                            <p>
+                                <label class="field" for="Emergency Contact Name">
+                                    <span>*</span>Contact's Name:</label>
+                                <input type="text" class="form-control" id="emergency-contact-name" placeholder="First and Last Name" name="contactName">
+                            </p>
+                            <p>
+                                <label class="field" for="Emergency Contact Phone Number">
+                                    Emergency Contact Phone:</label>
+                                <input type="tel" class="form-control" id="emergency-phone" placeholder="Enter Phone Number" name="emergencyPhone">
+                            </p>
+                            <P>
+                                <label class="field" for="Emergency Contact Email">
+                                    Contacts Email:</label>
+                                <input type="email" class="form-control" id="emergency-contact-email" placeholder="Enter Last Name" name="contactEmail">
+                            </P>
+                            <p>
+                                <label class="field" for="Relationship">
+                                    Relationship or other Notes about this contact:</label>
+                                <input type="text" class="form-control" id="emergency-relationship" placeholder="Enter Relationship to Home Owner" name="contactRelationship">
+                            </p>
+
+
+
+                            <button type="submit" class="btn btn-default">Submit:</button>
+                        </fieldset>
+                    </div>
+                </form>
+                <style></style>
 
             </div>
             <div class="modal-footer">
@@ -140,4 +180,6 @@
         </div>
     </div>
 
+
+    <script src="/js/form.js"></script>
 </div>
