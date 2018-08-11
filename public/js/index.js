@@ -3,11 +3,14 @@
 // var $houseDescription = $("#house-description");
 var $submitBtn = $("#submit");
 var $houseList = $("#house-list");
-var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/welcome2myhome/upload";
+var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/welcome2myhome/upload/";
+var KEY_URL = "https://api.cloudinary.com/v1_1/welcome2myhome/upload"; 
 var CLOUDINARY_UPLOAD_PRESET = "j8seyt9p";
 var imagePreview = document.getElementById("img-preview");
 var fileUpload = document.getElementById("file-upload");
 var tempUrl;
+// $.cloudinary.config({ cloud_name: 'welcome2myhome', secure: true});
+
 
 // function photoUpload() {
   fileUpload.addEventListener("change", function(event){
