@@ -5,7 +5,7 @@ module.exports = function(app) {
   // Load index page
   app.get("/index", function(req, res) {
     db.House.findAll({}).then(function(dbHouses) {
-      console.log(dbHouses);
+      // console.log(dbHouses);
       res.render("index", {
         msg: "Welcome!",
         houses: dbHouses
@@ -29,8 +29,19 @@ module.exports = function(app) {
     // I would prefer it to be /guest_view/:id/:placename, but for development, this linkage is easier to navigate
     // please change the linkage on the guest_view.handlebars and elsewhere before publishing (Mark)
     db.House.findOne({ where: { id: req.params.id } }).then(function(dbHouse) {
+      var herokuHost = "https://infinite-lowlands-27810.herokuapp.com";
+      var host = req.hostname;
+      var protocol = req.protocol;
+      // var houseUrl = protocol + "://" + host + "/guest_view/" + req.params.id;
+      var houseUrl = herokuHost + "/guest_view/" + req.params.id;
+      var qrUrl =
+        "http://api.qrserver.com/v1/create-qr-code/?data=" +
+        houseUrl +
+        "&size=200x200";
+
       res.render("guest_view", {
-        house: dbHouse
+        house: dbHouse,
+        qrUrl: qrUrl
       });
     });
   });

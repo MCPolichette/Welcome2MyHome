@@ -13,7 +13,7 @@ body {
   background-color: navy;
 }
 .card-img-top {
-  height: 600px;
+  max-height: 600px;
 }
 .bottom-left {
   position: absolute;
@@ -37,7 +37,7 @@ body {
 .nav-item {
   background: gray;
   color: black;
-  font-size: 150%;
+  font-size: 100%;
 }
 
 .img-bottom-right {
@@ -53,7 +53,6 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #333;
-  
 }
 /* navbar and footer settings */
 #frontPageLogo {
@@ -69,7 +68,7 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 16px;
-  margin-top:10px;
+  margin-top: 10px;
   margin-bottom: auto;
 }
 
@@ -80,8 +79,7 @@ body {
 
 /* .topnav a.active {
   background-color: navy;
-  color: black; */
-}
+  color: black;} */
 .footer {
   /* position: absolute; */
   width: 100%;
