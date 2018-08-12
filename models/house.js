@@ -15,5 +15,13 @@ module.exports = function(sequelize, DataTypes) {
   {
     freezeTableName: true
   });
+
+  House.associate = function (models) {
+    // Associating House with EmergencyContact
+    // When an House is deleted, also delete any associated EmergencyContact
+    House.hasMany(models.EmergencyContact, {
+      onDelete: "cascade"
+    });
+  };
   return House;
 };
