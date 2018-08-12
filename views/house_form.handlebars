@@ -122,15 +122,16 @@
 
 <div class="jumbotron">
     <div class="row">
-        <h1>Tell Us About Your Home!</h1>
-        <h3>In the forms below, fill out any information you would like your guest to know.</h3>
-        <h3> Everybody's home is different, thats why we want to allow you to customize this page as much as possible. Only a
-            few categories are Required, If something doesn't apply to you, don't feel obligated to fill it out</h3>
+        <h1 class="center">Tell Us About Your Home!</h1>
+
     </div>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
+            <p>In the forms below, fill out any information you would like your guest to know.. Everybody's home is different,
+                thats why we want to allow you to customize this page as much as possible. Only a few categories are Required,
+                If something doesn't apply to you, don't feel obligated to fill it out</p>
             <h1 class="center">About The Host (you)</h1>
         </div>
     </div>
@@ -176,113 +177,130 @@
     </div>
     <div class="row">
         {{!-- house-city, house-state, house-zip and house-city are new fields--}}
-        <h4 class="center">Details about your home</h4>
+        <h4 class="center">Details About Your Home</h4>
 
         <h3>Give Your House a Name</h3>
         {{!-- attention HOUSE_NAME replaces HOUSE_TEXT --}}
-        <div class="form-group">
+        <div class="form-row">
             <label for="house-name">House Name</label>
             <input id="house-name" type="text" class="form-control" aria-describedby="house-name" placeholder="My House!">
             <h5> This name will be the Headline of your page, and used for in your site's URL to make it easier to find</h5>
         </div>
     </div>
-    <div class="form-row">
-        <div class="form-group">
-            <label for="house-Address">Address</label>
-            <input id="house-address" type="text" class="form-control" aria-describedby="house-address" placeholder="1234 Main St">
+    <div class="row">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="house-Address">Address</label>
+                <input id="house-address" type="text" class="form-control" aria-describedby="house-address" placeholder="1234 Main St">
+            </div>
         </div>
-    </div>
-    <div class="form-row">
+        <div class="form-row">
 
-        <div class="form-group col-md-6">
-            <label for="house-city">City</label>
-            <input type="text" class="form-control" id="house-city">
+            <div class="form-group col-md-6">
+                <label for="house-city">City</label>
+                <input type="text" class="form-control" id="house-city">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="house-state">State</label>
+                <select id="house-state" class="form-control">
+                    <option selected>Choose...</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="house-zip">Zip</label>
+                <input type="text" class="form-control" id="house-zip">
+            </div>
         </div>
-        <div class="form-group col-md-4">
-            <label for="house-state">State</label>
-            <select id="house-state" class="form-control">
-                <option selected>Choose...</option>
-                <option value="AL">Alabama</option>
-                <option value="AK">Alaska</option>
-                <option value="AZ">Arizona</option>
-                <option value="AR">Arkansas</option>
-                <option value="CA">California</option>
-                <option value="CO">Colorado</option>
-                <option value="CT">Connecticut</option>
-                <option value="DE">Delaware</option>
-                <option value="DC">District Of Columbia</option>
-                <option value="FL">Florida</option>
-                <option value="GA">Georgia</option>
-                <option value="HI">Hawaii</option>
-                <option value="ID">Idaho</option>
-                <option value="IL">Illinois</option>
-                <option value="IN">Indiana</option>
-                <option value="IA">Iowa</option>
-                <option value="KS">Kansas</option>
-                <option value="KY">Kentucky</option>
-                <option value="LA">Louisiana</option>
-                <option value="ME">Maine</option>
-                <option value="MD">Maryland</option>
-                <option value="MA">Massachusetts</option>
-                <option value="MI">Michigan</option>
-                <option value="MN">Minnesota</option>
-                <option value="MS">Mississippi</option>
-                <option value="MO">Missouri</option>
-                <option value="MT">Montana</option>
-                <option value="NE">Nebraska</option>
-                <option value="NV">Nevada</option>
-                <option value="NH">New Hampshire</option>
-                <option value="NJ">New Jersey</option>
-                <option value="NM">New Mexico</option>
-                <option value="NY">New York</option>
-                <option value="NC">North Carolina</option>
-                <option value="ND">North Dakota</option>
-                <option value="OH">Ohio</option>
-                <option value="OK">Oklahoma</option>
-                <option value="OR">Oregon</option>
-                <option value="PA">Pennsylvania</option>
-                <option value="RI">Rhode Island</option>
-                <option value="SC">South Carolina</option>
-                <option value="SD">South Dakota</option>
-                <option value="TN">Tennessee</option>
-                <option value="TX">Texas</option>
-                <option value="UT">Utah</option>
-                <option value="VT">Vermont</option>
-                <option value="VA">Virginia</option>
-                <option value="WA">Washington</option>
-                <option value="WV">West Virginia</option>
-                <option value="WI">Wisconsin</option>
-                <option value="WY">Wyoming</option>
-            </select>
-        </div>
-        <div class="form-group col-md-2">
-            <label for="house-zip">Zip</label>
-            <input type="text" class="form-control" id="house-zip">
-        </div>
-        <div class="form-group">
+        <div class="form-row">
             <label for="house-directions">In this field you can write specific directions on how your guest can arrive</label>
             <textarea class="form-control" id="house-directions" aria-describedby="house-directions" placeholder="(knock on the side door)"></textarea>
         </div>
     </div>
-</div>
-<div class="row">
+    <hr>
+    <div class="row center">
+        <h4>Basic house info:</h4>
+        <hr>
+        <div class="row">
+            <div class="form-row">
 
-    <div class="form-group">
-        <label for="house-wifi-network">House Wifi Network</label>
-        <textarea class="form-control" id="house-wifi-network" aria-describedby="house-wifi-network" placeholder="Enter House Wifi Network"></textarea>
+                <div class="form-group col-md-6">
+                    <label for="house-wifi-network">Wifi Network:</label>
+                    <input id="house-wifi-network" type="text" class="form-control" placeholder="Wifi">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="house-wifi-password">Wifi Password</label>
+                    <input id="house-wifi-password" type="text" class="form-control" placeholder="Password">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <h3>Below are fields to help your guests navigate your home and neighborhood</h3>
+            <label for="house-tv-directions">How to use Television</label>
+            <textarea class="form-control" id="house-tv-directions" aria-describedby="house-wifi-network" placeholder="Where's the remote? How do I get to Netflix?"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="house-maintenence">What maintenence events need to be done?</label>
+            <textarea class="form-control" id="house-maintenence" aria-describedby="house-wifi-password" placeholder="Trash Days, house cleaners, other appointments"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="house-additional-rules">Additional Rules</label>
+            <textarea class="form-control" id="house-additional-rules" aria-describedby="house-alarm-key" placeholder="Any Other Notes for your guest"></textarea>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="house-wifi-password">House Wifi Password</label>
-        <textarea class="form-control" id="house-wifi-password" aria-describedby="house-wifi-password" placeholder="Enter House Wifi Password"></textarea>
-    </div>
-    <div class="form-group">
-        <label for="house-alarm-key">House Alarm Key</label>
-        <textarea class="form-control" id="house-alarm-key" aria-describedby="house-alarm-key" placeholder="Enter House Alarm Key"></textarea>
-    </div>
-</div>
-</div>
-</div>
-<button type="submit" id="form-submit" class="btn btn-primary">submit</button>
 
+
+    <button type="submit" id="form-submit" class="btn btn-primary">submit</button>
 </div>
+
 <script src="/js/form.js"></script>
