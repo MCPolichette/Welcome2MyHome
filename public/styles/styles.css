@@ -1,5 +1,7 @@
 body {
   background-color: grey;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 /* card specific classes */
 .work-box-card {
@@ -11,7 +13,7 @@ body {
   background-color: navy;
 }
 .card-img-top {
-  height: 600px;
+  max-height: 600px;
 }
 .bottom-left {
   position: absolute;
@@ -19,6 +21,14 @@ body {
   bottom: 5px;
 }
 
+.jumbotron {
+  background-image: url(/images/tom-rumble-645202-unsplash.jpg);
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+}
 /* card panels tabs set up for experimentation */
 .tab-pane {
   background-color: white;
@@ -27,10 +37,7 @@ body {
 .nav-item {
   background: gray;
   color: black;
-  font-size: 150%;
-}
-.nav-link {
-  color: black;
+  font-size: 100%;
 }
 
 .img-bottom-right {
@@ -49,8 +56,10 @@ body {
 }
 /* navbar and footer settings */
 #frontPageLogo {
-  height: 55px;
+  height: 46px;
   float: right;
+  margin: 11px;
+  margin-left: 0;
 }
 .topnav a {
   float: left;
@@ -58,7 +67,9 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: auto;
 }
 
 .topnav a:hover {
@@ -66,10 +77,9 @@ body {
   color: black;
 }
 
-.topnav a.active {
+/* .topnav a.active {
   background-color: navy;
-  color: black;
-}
+  color: black;} */
 .footer {
   /* position: absolute; */
   width: 100%;

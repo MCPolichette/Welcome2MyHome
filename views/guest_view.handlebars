@@ -59,7 +59,9 @@
                         <h4>Share {{house.place_name}}</h4>
                         <div id="keyOverlay">
                             <img src="/images/emptyKey.png" alt="Cinque Terre" width="100%">
-                            <div class="overlay">QR CODE GOES HERE</div>
+                            <div id="qr-placement" class="overlay">
+                                <img src="{{qrUrl}}" alt="">
+                            </div>
                         </div>
                     </div>
                     <div id="petCare" class="container tab-pane">
