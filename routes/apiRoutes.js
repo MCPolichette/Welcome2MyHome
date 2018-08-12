@@ -16,6 +16,38 @@ module.exports = function(app) {
     });
   });
 
+  app.post("/api/contactInfo", function (req, res) {
+    console.log("API ROUTE" + req);
+
+    db.House.create(req.body.houseInfo).then(function name(houseData) {
+      console.log(houseData);
+      var houseId = houseData.dataValues.id;
+      console.log(houseId);
+      var eContactInfo = req.body.eContact;
+      eContactInfo.HouseId = houseId;
+
+      db.EmergencyContact.create(eContactInfo).then(function(emergenInfo){
+
+        console.log(emergenInfo);
+        res.send("route hit and all data works");
+      });
+
+    });
+
+  });
+
+  app.get("/api/contactInfo", function (req, res) {
+    db.House.findOne({
+      where:{
+        id: 3,
+      },
+      include: [db.EmergencyContact]
+    }).then(function(houseData){
+      console.log(houseData);
+      res.json(houseData)
+    })
+  });
+
   // Delete an house by id
   app.delete("/api/houses/:id", function(req, res) {
     db.House.destroy({ where: { id: req.params.id } }).then(function(dbHouse) {
