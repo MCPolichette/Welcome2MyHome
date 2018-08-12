@@ -42,3 +42,10 @@
          return false;
      }
  }
+
+
+ for (var i = 0; i > contactarray.length; i ++){
+     var contactDiv = "<div class = 'divclass'>"
+     var contactInfo ="<h2>"+contactarray[i].contact_name+"</h2></div>">
+     $("#contact-view").append(contactDiv+contactInfo)
+ }
