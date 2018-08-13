@@ -110,7 +110,8 @@ var refreshHouses = function() {
     $("#trip-notes").val(),
     $("#house-tv-directions").val(),
     $("#house-maintenance").val(),
-    $("#house-additional-rules").val()
+    $("#house-additional-rules").val(),
+    $houseList.append($houses);
   });
 };
 
@@ -124,9 +125,9 @@ var handleFormSubmit = function(event) {
   var house = {
     place_name: $("#place-name").val().trim(),
     place_photo: tempUrl,
-    host_city: $("#house-city").val().trim(),
-    host_state: $("#house-state").val().trim(),
-    host_zip: $("#house-zip").val().trim(),
+    place_city: $("#house-city").val().trim(),
+    place_state: $("#house-state").val().trim(),
+    place_zip: $("#house-zip").val().trim(),
     house_directions: $("#house-directions").val().trim(),
     host_name: $("#house-owner").val().trim(),
 	  host_address: $("#house-address").val().trim(),
