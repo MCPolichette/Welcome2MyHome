@@ -39,7 +39,7 @@ module.exports = function(app) {
   app.get("/api/contactInfo", function (req, res) {
     db.House.findOne({
       where:{
-        id: 3,
+        id: 2,
       },
       include: [db.EmergencyContact]
     }).then(function(houseData){
