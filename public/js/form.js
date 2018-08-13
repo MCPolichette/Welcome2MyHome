@@ -8,7 +8,7 @@ var handleContactSubmit = function(event) {
 
   var emerContact = {
     contact_name: $("#emergency-contact-name"),
-    contact_email: $("#emergency-contact0email"),
+    contact_email: $("#emergency-contact-email"),
     contact_phone: $("#emergency-phone"),
     contact_description: $("#emergency-relationship")
   };
