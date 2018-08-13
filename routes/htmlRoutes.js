@@ -32,6 +32,7 @@ module.exports = function(app) {
       var herokuHost = "https://infinite-lowlands-27810.herokuapp.com";
       var host = req.hostname;
       var protocol = req.protocol;
+      // the below protocol and host should be more dynamic like the coment below.
       // var houseUrl = protocol + "://" + host + "/guest_view/" + req.params.id;
       var houseUrl = herokuHost + "/guest_view/" + req.params.id;
       var qrUrl =
