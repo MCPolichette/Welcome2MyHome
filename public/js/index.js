@@ -1,14 +1,13 @@
-
 var $submitBtn = $("#submit");
 var $houseList = $("#house-list");
-var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/welcome2myhome/upload"; 
+var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/welcome2myhome/upload";
 var CLOUDINARY_UPLOAD_PRESET = "j8seyt9p";
 var imagePreview = document.getElementById("img-preview");
 var fileUpload = document.getElementById("file-upload");
 var tempUrl;
 // $.cloudinary.config({ cloud_name: 'welcome2myhome', secure: true});
 
-fileUpload.addEventListener("change", function(event){
+fileUpload.addEventListener("change", function(event) {
   var file = event.target.files[0];
   var formData = new FormData();
   formData.append("file", file);
@@ -21,20 +20,20 @@ fileUpload.addEventListener("change", function(event){
       "Content-Type": "application/x-www-form-urlencoded"
     },
     data: formData
-  }).then(function(res) {
-    console.log(res);
-    imagePreview.src = res.data.secure_url;
-    tempUrl = res.data.secure_url;
-  }).catch(function(err){
-    console.log(err);
-  });
+  })
+    .then(function(res) {
+      console.log(res);
+      imagePreview.src = res.data.secure_url;
+      tempUrl = res.data.secure_url;
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
 });
-
 
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveHouse: function(house) {
-   
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -60,11 +59,9 @@ var API = {
   }
 };
 
-
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshHouses = function() {
   API.getHouses().then(function(data) {
-  
     var $houses = data.map(function(house) {
       var $a = $("<a>")
         .text(house.place_name)
@@ -108,16 +105,31 @@ var handleFormSubmit = function(event) {
   // photoUpload();
 
   var house = {
-    place_name: $("#house-text").val().trim(),
-    house_info: $("#house-description").val().trim(),
-    host_name: $("#house-owner").val().trim(),
+    place_name: $("#house-text")
+      .val()
+      .trim(),
+    house_info: $("#house-description")
+      .val()
+      .trim(),
+    host_name: $("#house-owner")
+      .val()
+      .trim(),
     place_photo: tempUrl,
-    host_address: $("#house-address").val().trim(),
-    host_phone: $("#house-phone").val().trim(),
-    host_email: $("#house-email").val().trim(),
-    wifi_password: $("#house-wifi-password").val().trim(),
-    house_alarm_pw: $("#house-alarm-key").val().trim()
-    
+    host_address: $("#house-address")
+      .val()
+      .trim(),
+    host_phone: $("#house-phone")
+      .val()
+      .trim(),
+    host_email: $("#house-email")
+      .val()
+      .trim(),
+    wifi_password: $("#house-wifi-password")
+      .val()
+      .trim(),
+    house_alarm_pw: $("#house-alarm-key")
+      .val()
+      .trim()
   };
   // console.log(house);
   // if (!(house.place_name && house.house_info)) {
@@ -128,19 +140,22 @@ var handleFormSubmit = function(event) {
     refreshHouses();
   });
   // take fields from inputs and put them into an object
-    // insert that object into an array
-    // display array of objects on screen
-    module.exports = function(sequelize, DataTypes) {
-      var EmergencyContact = sequelize.define("EmergencyContact", {
+  // insert that object into an array
+  // display array of objects on screen
+  module.exports = function(sequelize, DataTypes) {
+    var EmergencyContact = sequelize.define(
+      "EmergencyContact",
+      {
         contact_name: DataTypes.TEXT,
         contact_email: DataTypes.TEXT,
         contact_phone: DataTypes.TEXT,
         contact_description: DataTypes.TEXT
       },
-    {
+      {
         freezeTableName: true
-    });
-    return EmergencyContact
+      }
+    );
+    return EmergencyContact;
   };
 };
 
