@@ -3,39 +3,52 @@
     <div class="col-8 offset-2">
       <div class="card mt-4">
         <div class="card-body">
-          <h5 class="card-title">House</h5>
+          <h5 class="card-title">{{house.place_name}}</h5>
           <p>
-            <strong>PHOTO</strong>: {{house.place_photo}}</p>
+            <strong>Created</strong>:{{house.createdAt}}</p>
           <p>
-            <strong>ID</strong>: {{house.id}}</p>
+            <img src={{house.place_photo}}></p>
           <p>
+            <strong>House ID</strong>: {{house.id}}</p>
           <p>
-            <strong>owner</strong>: {{house.host_name}}</p>
+            <strong>Host Name</strong>: {{house.host_name}}</p>
           <p>
+            <strong>House Name</strong>: {{house.place_name}}</p>
           <p>
-            <strong>place</strong>: {{house.place_name}}</p>
+            <strong>Host Address</strong>: {{house.host_address}} {{house.place_city}}, {{house.place_state}},{{house.place_zip}}</p>
           <p>
-          {{!-- <img src="{{house.place_photo}}" alt="somehouse" style="width:300px; height:300px;"> --}}
+            <strong>Host Phone</strong>: {{house.host_phone}}</p>
           <p>
-            <strong>address</strong>: {{house.host_address}}</p>
+            <strong>Host Email</strong>: {{house.host_email}}</p>
           <p>
+            <strong>Directions</strong>: {{house.house_directions}}</p>
           <p>
-            <strong>phone</strong>: {{house.host_phone}}</p>
-          <p>
-          <p>
-            <strong>email</strong>: {{house.host_email}}</p>
-          <p>
-          <p>
-            <strong>wifi network</strong>: {{house.wifi_network}}</p>
-          <p>
+            <strong>Wifi Network</strong>: {{house.wifi_network}}</p>
           <p>
             <strong>Wifi Password</strong>: {{house.wifi_password}}</p>
           <p>
+            <strong>House Alarm Key</strong>: {{house.house_alarm_pw}}</p>
           <p>
-            <strong>alarm key</strong>: {{house.house_alarm_pw}}</p>
+            <strong>House Info:</strong> {{house.house_info}}</p>
           <p>
-
-            <strong>Description:</strong> {{house.house_info}}</p>
+            <strong>House TV Directions</strong>: {{house.tv_directions}}</p>
+          <p>
+            <strong>Maintenance Notes</strong>: {{house.house_maintenance}}</p>
+          <p>
+            <strong>Additional House Rules</strong>: {{house.house_rules}}</p>
+          <p>
+            <strong>Host Departure Date</strong>: {{house.departure_date}}</p>
+          <p>
+            <strong>Host Return Date</strong>: {{house.return_date}}</p>
+          <p>
+            <strong>Vacation Destination</strong>: {{house.trip_destination}}</p>
+          <p>
+            <strong>Vacation Contact Phone</strong>: {{house.trip_phone}}</p>
+          <p>
+            <strong>Hotel/Destination Address</strong>: {{house.trip_address}} {{house.trip_state}},{{house.trip_state}} {{house.trip_country}}</p>
+          <p>
+            <strong>Vacation Notes</strong>: {{house.trip_notes}}</p>
+          <p>
             <a href="/">← Back To Home</a>
         </div>
       </div>

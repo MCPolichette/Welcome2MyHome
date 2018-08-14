@@ -212,24 +212,6 @@ var handleFormSubmit = function(event) {
       });
     refreshHouses();
   });
-  // take fields from .inputs and put them into an object
-  // insert that object into an array
-  // display array of objects on screen
-  module.exports = function(sequelize, DataTypes) {
-    var EmergencyContact = sequelize.define(
-      "EmergencyContact",
-      {
-        contact_name: DataTypes.TEXT,
-        contact_email: DataTypes.TEXT,
-        contact_phone: DataTypes.TEXT,
-        contact_description: DataTypes.TEXT
-      },
-      {
-        freezeTableName: true
-      }
-    );
-    return EmergencyContact;
-  };
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
