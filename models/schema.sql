@@ -37,10 +37,10 @@ CREATE TABLE House
     PRIMARY KEY (id)
 );
 
-INSERT INTO House (host_name, place_name, place_photo, host_address, host_phone, host_email, wifi_network, wifi_password, house_alarm_pw, house_info, createdAt, updatedAt) 
-VALUES ('Will Swensen', 'Shenandoa', '../public/images/test1.jpeg', '123 Sesame Street SLC, UT 84106', '8015554343', 'willy@yahoo.com', 'SWENSEN', 'TESTING', '1234', 'garbage day on thursday, the plants have been watered', ' ', ' ');
+INSERT INTO House (host_name, place_name, place_photo, place_city, place_state, place_zip, house_directions, host_address, host_phone, host_email, host_notes, wifi_network, wifi_password, house_alarm_pw, house_info, departure_date, return_date, trip_destination, trip_phone, trip_address, trip_state, trip_country, trip_notes, tv_directions, house_maintenance, house_rules, createdAt, updatedAt) 
+VALUES ('Will Swensen', 'Wills House', '../public/images/test1.jpeg', 'SLC', 'UT', '84111', 'please dont forget to water the plants','123 Sesame Street SLC, UT 84106', '8015554343', 'willy@yahoo.com', 'SWENSEN', 'password', '1234', 'garbage day on thursday, the plants have been watered','09/02/2018', '09/06/2018', 'San Jose Costa Rica', '02 02 02 02 02 04 30', '123 casa blanca ct.', 'N/A', 'Costa Rica', 'going to the beach', 'input 3 for directv', 'N/A', 'N/A', ' ', ' ');
 
-INSERT INTO House (host_name, place_name, place_photo, host_address, host_phone, host_email, wifi_network, wifi_password, house_alarm_pw, house_info, createdAt, updatedAt) 
+INSERT INTO House (host_name, place_name, place_photo, place_city, place_state, place_zip, house_directions, host_address, host_phone, host_email, host_notes, wifi_network, wifi_password, house_alarm_pw, house_info, departure_date, return_date, trip_destination, trip_phone, trip_address, trip_state, trip_country, trip_notes, tv_directions, house_maintenance, house_rules, createdAt, updatedAt) 
 VALUES ('Clark Kent', 'Fortress of Solitude', '../public/images/test1.jpeg', '657 E. Maverick Ave SLC, UT 84106', '8015453432', 'clark_kent@yahoo.com', 'Kent Network', 'Cryptonite', '1111', 'lex luther may be my father but we are on bad terms', ' ', ' ');
 
 CREATE TABLE Emergency_Contact
