@@ -124,78 +124,32 @@ var handleFormSubmit = function(event) {
   // photoUpload();
 
   var house = {
-    place_name: $("#place-name")
-      .val()
-      .trim(),
+    place_name: $("#place-name").val().trim(),
     place_photo: tempUrl,
-    place_city: $("#house-city")
-      .val()
-      .trim(),
-    place_state: $("#house-state")
-      .val()
-      .trim(),
-    place_zip: $("#house-zip")
-      .val()
-      .trim(),
-    house_directions: $("#house-directions")
-      .val()
-      .trim(),
-    host_name: $("#house-owner")
-      .val()
-      .trim(),
-    host_address: $("#house-address")
-      .val()
-      .trim(),
-    host_phone: $("#house-phone")
-      .val()
-      .trim(),
-    host_email: $("#house-email")
-      .val()
-      .trim(),
-    host_notes: $("#host-notes")
-      .val()
-      .trim(),
-    wifi_network: $("#house-wifi-network")
-      .val()
-      .trim(),
-    wifi_password: $("#house-wifi-password")
-      .val()
-      .trim(),
-    // house_alarm_pw: $("#house-alarm-key").val().trim(),
-    // house_info: $("#house-description").val().trim(),
-    departure_date: $("#departure-date")
-      .val()
-      .trim(),
-    return_date: $("#return-date")
-      .val()
-      .trim(),
-    trip_destination: $("#trip-destination")
-      .val()
-      .trim(),
-    trip_phone: $("#trip-phone")
-      .val()
-      .trim(),
-    trip_address: $("#trip-address")
-      .val()
-      .trim(),
-    trip_state: $("#trip-state")
-      .val()
-      .trim(),
-    trip_country: $("#trip-country")
-      .val()
-      .trim(),
-    trip_notes: $("#trip-notes")
-      .val()
-      .trim(),
-    tv_directions: $("#house-tv-directions")
-      .val()
-      .trim(),
-    house_maintenance: $("#house-maintenance")
-      .val()
-      .trim(),
-    house_rules: $("#house-additional-rules")
-      .val()
-      .trim()
+    place_city: $("#house-city").val().trim(),
+    place_state: $("#house-state").val().trim(),
+    place_zip: $("#house-zip").val().trim(),
+    house_directions: $("#house-directions").val().trim(),
+    host_name: $("#house-owner").val().trim(),
+    host_address: $("#house-address").val().trim(),
+    host_phone: $("#house-phone").val().trim(),
+    host_email: $("#house-email").val().trim(),
+    host_notes: $("#host-notes").val().trim(),
+    wifi_network: $("#house-wifi-network").val().trim(),
+    wifi_password: $("#house-wifi-password").val().trim(),
+    // house_alarm_pw: $("#house-alarm-key.val.trim(),
+    // house_info: $("#house-description.val.trim(),
+    departure_date: $("#departure-date").val().trim(),
+    return_date: $("#return-date").val().trim(),
+    trip_destination: $("#trip-destination").val().trim(),
+    trip_phone: $("#trip-phone").val().trim(),
+    trip_address: $("#trip-address").val().trim(),
+    trip_state: $("#trip-state").val().trim(),
+    trip_country: $("#trip-country").val().trim(),
+    trip_notes: $("#trip-notes").val().trim(),
+    tv_directions: $("#house-tv-directions").val().trim(),
+    house_maintenance: $("#house-maintenance").val().trim(),
+    house_rules: $("#house-additional-rules").val().trim()
   };
   // console.log(house);
   // if (!(house.place_name && house.house_info)) {
