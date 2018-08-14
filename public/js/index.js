@@ -1,4 +1,3 @@
-
 var $submitBtn = $("#form-submit");
 var $houseList = $("#house-list");
 var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/welcome2myhome/upload";
@@ -6,6 +5,7 @@ var CLOUDINARY_UPLOAD_PRESET = "j8seyt9p";
 var imagePreview = document.getElementById("img-preview");
 var fileUpload = document.getElementById("file-upload");
 var tempUrl;
+var newId = "";
 // $.cloudinary.config({ cloud_name: 'welcome2myhome', secure: true});
 
 fileUpload.addEventListener("change", function(event) {
@@ -41,9 +41,12 @@ var API = {
       },
       type: "POST",
       url: "api/houses",
-      data: JSON.stringify(house)
-      // var house is being stringified before leading into saveHouse function
-      // original data: JSON.stringify(house)
+      data: JSON.stringify(house),
+      success: function(result) {
+        // remove these after success
+        console.log("TEST");
+        newId = result.id;
+      }
     });
   },
   getHouses: function() {
@@ -84,32 +87,32 @@ var refreshHouses = function() {
       return $li;
     });
     $("#house-name").val(),
-    tempUrl,
-    $("#house-city").val(),
-    $("#house-state").val(),
-    $("#house-zip").val(),
-    $("#house-directions").val(),
-    $("#house-owner").val(),
-	  $("#house-address").val(),
-    $("#house-phone").val(), 
-    $("#house-email").val(),
-    $("#host-notes").val(),
-    $("#house-wifi-network").val(),
-    $("#house-wifi-password").val(), 
-    // $("#house-alarm-key").val(),  
-    // $("#house-description").val(), 
-    $("#departure-date").val(),
-    $("#return-date").val(),
-    $("#trip-destination").val(),
-    $("#trip-phone").val(),
-    $("#trip-address").val(),
-    $("#trip-state").val(),
-    $("#trip-country").val(),
-    $("#trip-notes").val(),
-    $("#house-tv-directions").val(),
-    $("#house-maintenance").val(),
-    $("#house-additional-rules").val(),
-    $houseList.append($houses);
+      tempUrl,
+      $("#house-city").val(),
+      $("#house-state").val(),
+      $("#house-zip").val(),
+      $("#house-directions").val(),
+      $("#house-owner").val(),
+      $("#house-address").val(),
+      $("#house-phone").val(),
+      $("#house-email").val(),
+      $("#host-notes").val(),
+      $("#house-wifi-network").val(),
+      $("#house-wifi-password").val(),
+      // $("#house-alarm-key").val(),
+      // $("#house-description").val(),
+      $("#departure-date").val(),
+      $("#return-date").val(),
+      $("#trip-destination").val(),
+      $("#trip-phone").val(),
+      $("#trip-address").val(),
+      $("#trip-state").val(),
+      $("#trip-country").val(),
+      $("#trip-notes").val(),
+      $("#house-tv-directions").val(),
+      $("#house-maintenance").val(),
+      $("#house-additional-rules").val(),
+      $houseList.append($houses);
   });
 };
 
@@ -128,14 +131,14 @@ var handleFormSubmit = function(event) {
     place_zip: $("#house-zip").val().trim(),
     house_directions: $("#house-directions").val().trim(),
     host_name: $("#house-owner").val().trim(),
-	  host_address: $("#house-address").val().trim(),
-    host_phone: $("#house-phone").val().trim(), 
+    host_address: $("#house-address").val().trim(),
+    host_phone: $("#house-phone").val().trim(),
     host_email: $("#house-email").val().trim(),
-    host_notes:  $("#host-notes").val().trim(),
+    host_notes: $("#host-notes").val().trim(),
     wifi_network: $("#house-wifi-network").val().trim(),
-    wifi_password: $("#house-wifi-password").val().trim(), 
-    // house_alarm_pw: $("#house-alarm-key").val().trim(),  
-    // house_info: $("#house-description").val().trim(), 
+    wifi_password: $("#house-wifi-password").val().trim(),
+    // house_alarm_pw: $("#house-alarm-key.val.trim(),
+    // house_info: $("#house-description.val.trim(),
     departure_date: $("#departure-date").val().trim(),
     return_date: $("#return-date").val().trim(),
     trip_destination: $("#trip-destination").val().trim(),
@@ -154,6 +157,13 @@ var handleFormSubmit = function(event) {
   //   return;
   // }
   API.saveHouse(house).then(function() {
+    //===========working here ========================= example below==============================================
+    $("#linkToGuestView")
+      .attr("href", "/guest_view/" + house.id)
+      .then(function() {
+        $("#confirmation-modal").modal("show");
+        console.log("show modal");
+      });
     refreshHouses();
   });
 };
