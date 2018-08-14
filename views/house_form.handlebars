@@ -170,7 +170,43 @@
     </div>
 
 </div>
+<div class="modal fade" id="confirmation-modal" tabindex="-1" role="dialog" aria-labelledby="confirmation-modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="logo">Guest Key</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body laila">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>WE'VE DONE IT!</h1>
+                        <div id="sharePage" class="container tab-pane">
+                            <h4>Share {{house.place_name}} With your friends</h4>
+                            <div id="keyOverlay">
+                                <img src="/images/emptyKey.png" alt="HouseKey" width="100%">
+                                <div id="qr2-placement" class="overlay">
+                                    {{!-- needs script cleaning, but currently functioning --}}
+                                    <img src="http://api.qrserver.com/v1/create-qr-code/?data=https://infinite-lowlands-27810.herokuapp.com/guest_view&size=200x200"
+                                        alt=" " width="100% ">
+                                </div>
+                                <button type="button" id=" linkToGuestView " class="btn btn-primary btn-lg btn-block ">See your Website!</button>
+                            </div>
+                            <h3>Heres your page!</h3>
+                            <div>
+                            </div>
 
+                            {{!-- In this div we will input a link to the new website --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 
 <div class="jumbotron">
@@ -185,7 +221,7 @@
             <p>In the forms below, fill out any information you would like your guest to know.. Everybody's home is different,
                 thats why we want to allow you to customize this page as much as possible. Only a few categories are Required,
                 If something doesn't apply to you, don't feel obligated to fill it out</p>
-            <h1 class="center">About The Host (you)</h1>
+            <h1 class="center">About The Host</h1>
         </div>
     </div>
     <div class="row">
@@ -207,14 +243,14 @@
                     <label for="host-notes">Additional Notes:</label>
                     <textarea class="form-control" id="host-notes" aria-describedby="host-notes" placeholder="Write any additional details you might want to "></textarea>
                 </div>
-                <a id="createNewContactBtn" class="nav-link" data-toggle="modal" data-target="#emergency-contact-modal">Create an emergency contact</a>
-                <a id="createTripBtn" class="nav-link" data-toggle="modal" data-target="#trip-modal">Trip Modal</a>
+                <button type="button" id="createNewContactBtn"  data-toggle="modal" data-target="#emergency-contact-modal" class="nav-link btn btn-primary btn-lg btn-block">Add an Emergency Contact</button>
+                <button type="button" id="createTripBtn " data-toggle="modal" data-target="#trip-modal"  class="nav-link btn btn-primary btn-lg btn-block">Put in information about your vacation</button>
             </div>
         </div>
         <div class="col-md-6">
             <h3 class="center">Submit a Photo</h3>
             <div class="form-group">
-                <label for="house-photo">Add a photo to represent your home</label>
+                {{!-- <label for="house-photo">Add a photo to represent your home</label> --}}
                 <div class="card">
                     <img src="http://fillmurray.com/g/300/300" id="img-preview" max-height="500px">
                     <label class="file-upload-container" for="file-upload">
@@ -234,14 +270,14 @@
     <div class="row">
         <div class="col-sm-12">
             {{!-- house-city, house-state, house-zip and house-city are new fields--}}
+            <hr>
             <h4 class="center">Details About Your Home</h4>
-
+            <hr>
             <h3>Give Your House a Name</h3>
             {{!-- attention HOUSE_NAME replaces HOUSE_TEXT --}}
             <div class="form-row">
                 <label for="place-name">House Name</label>
-                <input id="place-name" type="text" class="form-control" aria-describedby="place-name" placeholder="My House!">
-                <h5> This name will be the Headline of your page, and used for in your site's URL to make it easier to find</h5>
+                <input id="place-name" type="text" class="form-control" aria-describedby="place-name" placeholder="This name will be the Headline of your page, and used for in your site's URL to make it easier to find">
             </div>
         </div>
     </div>
@@ -253,6 +289,8 @@
                     <input id="house-address" type="text" class="form-control" aria-describedby="house-address" placeholder="1234 Main St">
                 </div>
             </div>
+            <div class = "row">
+                <div class = "col-sm-12">
             <div class="form-row">
 
                 <div class="form-group col-md-6">
@@ -320,17 +358,17 @@
                     <label for="house-zip">Zip</label>
                     <input type="text" class="form-control" id="house-zip">
                 </div>
+                </div>
             </div>
+        </div>
             <div class="form-row">
                 <label for="house-directions">In this field you can write specific directions on how your guest can arrive</label>
                 <textarea class="form-control" id="house-directions" aria-describedby="house-directions" placeholder="Example:  knock on the side door"></textarea>
             </div>
         </div>
     </div>
-    <hr>
     <div class="row center">
         <div class="col-sm-12">
-            <h4>Basic house info:</h4>
             <hr>
             <h3>Below are fields to help your guests navigate your home and neighborhood</h3>
             <hr>
@@ -346,7 +384,7 @@
                     <input id="house-wifi-password" type="text" class="form-control" placeholder="Password">
                 </div>
             </div>
-
+            <hr>
             <div class="form-row">
 
                 <label for="house-tv-directions">How to use Television</label>
@@ -364,8 +402,9 @@
             </div>
         </div>
     </div>
+    <hr>
 
-    <button type="submit" id="form-submit" class="btn btn-primary">submit</button>
+    <button type="submit" data-target="#confirmation-modal" id="form-submit" class="btn btn-primary btn-lg btn-block">submit</button>
 </div>
 
 <script src="/js/form.js"></script>

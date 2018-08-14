@@ -1,7 +1,7 @@
 body {
   background-color: lightgray;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Laila', serif;
 }
 /* card specific classes */
 .work-box-card {
@@ -23,6 +23,7 @@ body {
 
 .jumbotron {
   background-image: url(/images/tom-rumble-645202-unsplash.jpg);
+  font-family: 'Kaushan Script';
   background-position: 0% 25%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -41,8 +42,7 @@ body {
 }
 
 .img-bottom-right {
-  top: 5%;
-  right: 5%;
+  top: 0;
   opacity: 0.7;
   background-color: navy;
   max-height: 20%;
@@ -81,7 +81,7 @@ body {
   background-color: navy;
   color: black;} */
 .footer {
-  /* position: absolute; */
+  position: relative;
   width: 100%;
   margin-top: 15px;
   left: 0;
@@ -125,7 +125,9 @@ body {
   cursor: pointer;
   background: #3949ab;
 }
-
+#guestImage{
+  min-height: 300px;
+}
 /* css for key overlay please keep at the bottom */
 
 #keyOverlay {
@@ -139,7 +141,7 @@ body {
   width: 30.5%;
   height: 70.5%;
   font-size: 18px;
-  background-color: yellow;
+  /* background-color:yellow; */
 }
 #sadFace {
   position: absolute;
@@ -149,4 +151,36 @@ body {
 
 .list-group {
   width: 75%;
+}
+.modal-header {
+  font-family: 'Laila', serif;
+  text-align: left;
+  font-size: 20px;
+  color: black;
+  background-color: #38637e;
+  /* text-shadow: gray 0.1em 0.1em 0.1em; */
+
+}
+
+.modal-body {
+  /* background-image: url("/images/tom-rumble-645202-unsplash.jpg "); */
+  background-color: lightgrey;
+  font-family: 'Laila', serif;
+  text-align: left;
+  font-size: 15px;
+  color: black;
+  /* image: [ */
+    /* opacity] */
+  }
+
+.laila {
+  font-family: 'Laila', serif;
+}
+
+.kaushan {
+  font-family: 'Kaushan Script',
+
+}
+.form-group {
+  width: 100%;
 }
