@@ -152,6 +152,7 @@ body {
 .list-group {
   width: 75%;
 }
+<<<<<<< HEAD
 .modal-header {
   font-family: 'Laila', serif;
   text-align: left;
@@ -181,6 +182,8 @@ body {
   font-family: 'Kaushan Script',
 
 }
+=======
+>>>>>>> bd68c5beb6244a73335ddbe5f5074c74a949b308
 .form-group {
   width: 100%;
 }
