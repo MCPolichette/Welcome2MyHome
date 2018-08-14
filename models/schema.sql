@@ -8,7 +8,7 @@ CREATE TABLE House
 	id int NOT NULL AUTO_INCREMENT,
 	host_name VARCHAR(255) NOT NULL,
     place_name VARCHAR(20) NULL,
-    place_photo VARCHAR(200) NULL,	
+    place_photo VARCHAR(200) NOT NULL,	
     place_city VARCHAR(50) NULL,
     place_state VARCHAR(50) NULL,
     place_zip INTEGER(10) NULL,
