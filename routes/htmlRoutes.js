@@ -42,7 +42,8 @@ module.exports = function(app) {
 
       res.render("guest_view", {
         house: dbHouse,
-        qrUrl: qrUrl
+        qrUrl: qrUrl,
+        houseUrl: houseUrl
       });
     });
   });
