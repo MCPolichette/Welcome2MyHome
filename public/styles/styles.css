@@ -125,7 +125,9 @@ body {
   cursor: pointer;
   background: #3949ab;
 }
-
+#guestImage{
+  min-height: 300px;
+}
 /* css for key overlay please keep at the bottom */
 
 #keyOverlay {

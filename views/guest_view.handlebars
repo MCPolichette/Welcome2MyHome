@@ -5,7 +5,7 @@
                 <img class="card-img-top" src="{{house.place_photo}}" alt="Card image cap">
                 <div class="card-img-overlay img-bottom-right">
 
-                    <h1 class="card-title ">{{house.place_name}}</h1>
+                    <h1 class="display1 card-title ">{{house.place_name}}</h1>
                     <p class="card-text bottom-left">Last Updated: {{house.updatedAt}}</p>
                 </div>
                 <div class="card-header workbox-header">
@@ -20,7 +20,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#sharePage">
-                                <img src="/images/emptyKey.png" style="height:1.5em">Share This Page</a>
+                                <img id ="guestImage" src="/images/emptyKey.png" style="height:1.5em">Share This Page</a>
                         </li>
                         {{!--
                         <li class="nav-item">
@@ -40,20 +40,47 @@
                     <div id="hostInfo" class="container tab-pane active">
                         <br>
                         <h5>{{house.host_name}}</h5>
-                        <p>{{house.host_address}}</p>
+                        
                         <p>{{house.host_email}}</p>
                         <p>{{house.host_phone}}</p>
+                        <p>{{house.host_notes}}</p>
+                        <hr>
+                        <p>{{house.host_name}}'s vacation info:</p>
+                        <p>Departs: {{house.departure_date}}</p>
+                        <p>Returns: {{house.return_date}}</p>
+                        <p>Visiting: {{house.trip_destination}}</p>
+                        <hr>
+                        <p>{{house.trip_address}}</p>
+                        <p>{{house.trip_state}}</p>
+                        <p>{{house.trip_country}}</p>
+                        <p>{{house.trip_phone}}</p>
+                        <p>{{house.trip_email}}</p>
+                        <p>{{house.trip_notes}}</p>
+
                     </div>
+                    
                     <div id="houseInfo" class="container tab-pane fade">
                         <br>
 
                         <h5>{{house.place_name}}</h5>
-
+                        <p>{{house.host_address}}</p>
+                        <p>{{house.place_city}}</p>
+                        <p>{{house.place_state}}</p>
+                        <p>{{house.place_zip}}</p>
+                        <p>Directions</p>
+                        <p>{{house.house_directions}}</p>
                         <p>{{house.house_info}}</p>
                         <br>
                         <p>wifi network: {{house.wifi_network}} </p>
                         <hr>
                         <p>wifi password: {{house.wifi_password}}</p>
+
+                        <p>Access to TV options:</p>
+                        <p>{{house.tv_directions}}</p>
+                        <p>{{house.place_name}} Regular Maintenance</p>
+                        <p>{{house.house_maintenance}}</p>
+                        <p>{{house.place_name}} Rules</p>
+                        <p>{{house.house_rules}}</p>
                     </div>
                     <div id="sharePage" class="container tab-pane">
                         <h4>Share {{house.place_name}}</h4>
@@ -63,6 +90,7 @@
                                 <img src="{{qrUrl}}" alt="" width="100%">
                             </div>
                         </div>
+                        <h1 class ="center">{{qrUrl}}</h1>
                     </div>
                     <div id=" petCare " class="container tab-pane ">
 

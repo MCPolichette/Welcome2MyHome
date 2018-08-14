@@ -151,14 +151,15 @@ var handleFormSubmit = function(event) {
     house_maintenance: $("#house-maintenance").val().trim(),
     house_rules: $("#house-additional-rules").val().trim()
   };
-  // console.log(house);
-  // if (!(house.place_name && house.house_info)) {
-  //   alert("You must enter house text and description!");
-  //   return;
-  // }
+  console.log(house);
+  if (!(house.place_name )) {
+    alert("You must enter house text and description!");
+    return;
+  }
   API.saveHouse(house).then(function() {
     //===========working here =============== example below====================
-    $("#linkToGuestView")
+    // console.log( $('#linkToGuestView').length);
+    $("#linkToGuestView")      
       .attr("href", "/guest_view/" + house.id)
       .then(function() {
         $("#confirmation-modal").modal("show");
