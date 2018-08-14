@@ -146,3 +146,33 @@ body {
   top: 30%;
   left: 33%;
 }
+
+.modal-header {
+  font-family: 'Laila', serif;
+  text-align: left;
+  font-size: 20px;
+  color: black;
+  background-color: #38637e;
+  /* text-shadow: gray 0.1em 0.1em 0.1em; */
+
+}
+
+.modal-body {
+  /* background-image: url("/images/tom-rumble-645202-unsplash.jpg "); */
+  background-color: lightgrey;
+  font-family: 'Laila', serif;
+  text-align: left;
+  font-size: 15px;
+  color: black;
+  /* image: [ */
+    /* opacity] */
+  }
+
+.laila {
+  font-family: 'Laila', serif;
+}
+
+.kaushan {
+  font-family: 'Kaushan Script',
+
+}
