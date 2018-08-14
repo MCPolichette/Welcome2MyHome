@@ -8,7 +8,6 @@ module.exports = function(app) {
     });
   });
 
-
   // Create a new house
   app.post("/api/houses", function(req, res) {
     console.log("API ROUTE" + req);
