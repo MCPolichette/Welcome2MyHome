@@ -137,8 +137,8 @@ var handleFormSubmit = function(event) {
     host_notes: $("#host-notes").val().trim(),
     wifi_network: $("#house-wifi-network").val().trim(),
     wifi_password: $("#house-wifi-password").val().trim(),
-    // house_alarm_pw: $("#house-alarm-key.val.trim(),
-    // house_info: $("#house-description.val.trim(),
+    // house_alarm_pw: $("#house-alarm-key.val").val.trim(),
+    // house_info: $("#house-description.val").val.trim(),
     departure_date: $("#departure-date").val().trim(),
     return_date: $("#return-date").val().trim(),
     trip_destination: $("#trip-destination").val().trim(),
@@ -157,7 +157,7 @@ var handleFormSubmit = function(event) {
   //   return;
   // }
   API.saveHouse(house).then(function() {
-    //===========working here ========================= example below==============================================
+    //===========working here =============== example below====================
     $("#linkToGuestView")
       .attr("href", "/guest_view/" + house.id)
       .then(function() {

@@ -245,8 +245,9 @@
                                     any additional details you might want to "></textarea>
                 </div>
                 {{!-- BUTTONS BELOW! --}}
-                <a id="createNewContactBtn " class="nav-link " data-toggle="modal " data-target="#emergency-contact-modal ">Create an emergency contact</a>
-                <a id="createTripBtn " class="nav-link " data-toggle="modal " data-target="#trip-modal ">Trip Modal</a>
+                <button type="button" id="createNewContactBtn"  data-toggle="modal" data-target="#emergency-contact-modal" class="nav-link btn btn-primary btn-lg btn-block">Add an Emergency Contact</button>
+                <button type="button" id="createTripBtn " data-toggle="modal" data-target="#trip-modal"  class="nav-link btn btn-primary btn-lg btn-block">Put in information about your vacation</button>
+                
             </div>
         </div>
         <div class="col-md-6 ">
@@ -254,7 +255,7 @@
             <div class="form-group ">
                 <label for="house-photo ">Add a photo to represent your home</label>
                 <div class="card ">
-                    <img src="http://fillmurray.com/g/300/300 " id="img-preview " max-height="500px ">
+                    <img src="http://fillmurray.com/g/300/300 " id="img-preview " max-height="500px"width="auto">
                     <label class="file-upload-container " for="file-upload ">
                         <input id="file-upload " type="file " style="display:none; "> Select an Image
                     </label>
