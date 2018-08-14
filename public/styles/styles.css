@@ -98,6 +98,7 @@ body {
 }
 
 .image-upload-card {
+  max-height: 200px;
   background: white;
   display: flex;
   flex-direction: column;
@@ -149,4 +150,8 @@ body {
 
 .list-group {
   width: 75%;
+}
+
+#img-preview {
+  max-height: 450px;
 }

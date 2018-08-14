@@ -5,6 +5,7 @@ var CLOUDINARY_UPLOAD_PRESET = "j8seyt9p";
 var imagePreview = document.getElementById("img-preview");
 var fileUpload = document.getElementById("file-upload");
 var tempUrl;
+var currentTime = moment().format("MMMM Do YYYY, h:mm:ss a");
 var newId = "";
 // $.cloudinary.config({ cloud_name: 'welcome2myhome', secure: true});
 
@@ -112,6 +113,7 @@ var refreshHouses = function() {
       $("#house-tv-directions").val(),
       $("#house-maintenance").val(),
       $("#house-additional-rules").val(),
+      currentTime,
       $houseList.append($houses);
   });
 };
@@ -149,7 +151,8 @@ var handleFormSubmit = function(event) {
     trip_notes: $("#trip-notes").val().trim(),
     tv_directions: $("#house-tv-directions").val().trim(),
     house_maintenance: $("#house-maintenance").val().trim(),
-    house_rules: $("#house-additional-rules").val().trim()
+    house_rules: $("#house-additional-rules").val().trim(),
+    createdAt: currentTime,
   };
   // console.log(house);
   // if (!(house.place_name && house.house_info)) {
