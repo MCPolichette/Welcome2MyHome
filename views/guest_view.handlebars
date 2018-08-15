@@ -40,24 +40,24 @@
                       <br>  
                       <div class="row">
                             <div class="col-sm-6">
-                                
+                                <h4>Host Contact Info</h4>
+                                <hr>
                                 <h5>{{house.host_name}}</h5>
                                 
                                 <p>{{house.host_email}}</p>
                                 <p>{{house.host_phone}}</p>
-                                <p>{{house.host_notes}}</p>
-                                <hr>
+                                 <hr>
+                                <h6>{{house.host_notes}}</h6>
+                               
                             </div>
-                            <div class="col-sm-6"> 
-                                <br>                                   
-                                <p>{{house.host_name}}'s vacation info:</p>
-                                <p>Departs: {{house.departure_date}}</p>
-                                <p>Returns: {{house.return_date}}</p>
-                                <p>Visiting: {{house.trip_destination}}</p>
+                            <div class="col-sm-6">                                  
+                                <h4>Vacation Info</h4>
                                 <hr>
-                                <p>{{house.trip_address}}</p>
-                                <p>{{house.trip_state}}</p>
-                                <p>{{house.trip_country}}</p>
+                                <p>Departure Date: {{house.departure_date}}</p>
+                                <p>Return Date: {{house.return_date}}</p>
+                                <p>Visiting: {{house.trip_destination}}</p>
+                                <p>Destination Address</p>
+                                <p>{{house.trip_address}} {{house.trip_state}} {{house.trip_country}}</p>
                                 <p>{{house.trip_phone}}</p>
                                 <p>{{house.trip_email}}</p>
                                 <p>{{house.trip_notes}}</p> 
@@ -73,24 +73,21 @@
                             <div class="col-sm-6">                               
                                 <h5>{{house.place_name}}</h5>
                                 <p>{{house.host_address}}</p>
-                                <p>{{house.place_city}}</p>
-                                <p>{{house.place_state}}</p>
-                                <p>{{house.place_zip}}</p>
-                                <p>Directions</p>
-                                <p>{{house.house_directions}}</p>
-                                <p>{{house.house_info}}</p>
+                                <p>{{house.place_city}}, {{house.place_state}} {{house.place_zip}}</p>
+                                <p>House Directions:</p>
+                                <p>{{house.house_directions}} {{house.house_info}}</p>
                             </div>
                             <div class="col-sm-6">
-                                <p>wifi network: {{house.wifi_network}} </p>
-                                <hr>
+                                <p>Wifi Network: {{house.wifi_network}} </p>
                                 <p>wifi password: {{house.wifi_password}}</p>
-
-                                <p>Access to TV options:</p>
+                                <hr>
+                                <p>Access to TV Instructions:</p>
                                 <p>{{house.tv_directions}}</p>
-                                <p>{{house.place_name}} Regular Maintenance</p>
+                                <h4>Regular Maintenance</h4>
+                                <hr>
                                 <p>{{house.house_maintenance}}</p>
                                 <p>{{house.place_name}} Rules</p>
-                                <p>{{house.house_rules}}</p>
+                                <h4>{{house.house_rules}}</h4>
                             </div>
                         </div>
                     </div>
